@@ -177,8 +177,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
-    include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';  
-?>
+    include 'C:\xampp\htdocs\sistema-reportes\modal\modalReporteFormularioEvento.php';?>
 <!--===============================================================================================-->  
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -262,6 +261,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>
+
+    <script src="js/script.js"></script>
 
 </body>
 </html>

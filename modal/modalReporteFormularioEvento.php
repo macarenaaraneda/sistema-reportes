@@ -26,7 +26,7 @@
                 <div class="form-group col-sm-12">
                     
                     <label> Fecha de ocurrencia de evento</label>
-                    <input type="date" name="Fecha" class="form-control">
+                    <input type="date" name="fecha" class="form-control">
                 </div>  
              
             </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
@@ -35,32 +35,31 @@
                            
                                 <div class="form-group col-sm-12">
                                     <label>Unidad o lugar de ocurrencia</label>
-                                    <select name="Unidad" class="form-control">
+                                    <select name="unidad" class="form-control">
                                         
                                         <option selected>
                                             Elegir unidad donde ocurrió el evento
                                         </option>
-
-                                        <option value="seleccione">Seleccione</option>
-                                        <option value="Salud mental">Salud mental</option>
-                                        <option value="Cuidados paleativos">Cuidados paleativos</option>
-                                        <option value="Especialidades odontólogicas">Especialidades odontológicas</option>
-                                        <option value="Prais">Prais</option>
-                                        <option value="Medicina física">Medicina fisica</option>
-                                        <option value="Farmacia">Farmacia</option>
-                                        <option value="Imageonología">Imageonología</option>
-                                        <option value="Esterilización">Esterilización</option>
-                                        <option value="Laboratorio">Laboratorio</option>
-                                        <option value="Nutrición">Nutrición</option>
-                                        <option value="Endoscopía">Endoscopia</option>
-                                        <option value="Especialidades médico quirúrgico">Especialidades medico quirúrgico</option>
-                                        <option value="Pabellon">Pabellon</option>
-                                        <option value="Hospitalización psiquiatría">Hospitalización pisquiatria</option>
-                                        <option value="Hospital de día">Hospital de día</option>
-                                        <option value="Ginecología">Ginecología</option>
-                                        <option value="Médico quirúrgico adulto">medico quirurgico adulto</option>
-                                        <option value="Médico quirúrgico infantil">medico quirurgico infantil</option>
-                                        <option value="urgencia">urgencia</option>
+                                        <option value="1">Salud mental</option>
+                                        <option value="2">Cuidados paleativos</option>
+                                        <option value="3">Especialidades odontológicas</option>
+                                        <option value="4">Prais</option>
+                                        <option value="5">Medicina fisica</option>
+                                        <option value="6">Farmacia</option>
+                                        <option value="7">Imageonología</option>
+                                        <option value="8">Esterilización</option>
+                                        <option value="9">Laboratorio</option>
+                                        <option value="10">Nutrición</option>
+                                        <option value="11">Endoscopia</option>
+                                        <option value="12">Especialidades medico quirúrgico</option>
+                                        <option value="13">Pabellon</option>
+                                        <option value="14">Hospitalización pisquiatria</option>
+                                        <option value="15">Hospital de día</option>
+                                        <option value="16">Ginecología</option>
+                                        <option value="17">Médico quirurgico adulto</option>
+                                        <option value="18">Médico quirurgico infantil</option>
+                                        <option value="19">Urgencia</option>
+                                        <option value="20">Equipos médicos</option>
                                     </select>
                                 </div>
             </div>  <!-- FIN SELECT LUGAR DE OCURRENCIA -->
@@ -167,7 +166,7 @@
                                 <div class="form-group col-sm-12">
                                     
                                  <label>Causa daño al paciente:</label>
-                                 <input type="checkbox" name="Daño_paciente">
+                                 <input type="checkbox" name="dano_paciente">
                
                                 </div>
                             </div> <!-- FIN CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
@@ -176,7 +175,7 @@
                            
                                 <div class="form-group col-sm-12">
                                     <label>Gravedad del daño:</label>
-                                    <select name="tipo_daño" class="form-control">
+                                    <select name="tipo_dano" class="form-control">
                                         
                                         <option selected>
                                            Elegir gravedad de daño
@@ -196,7 +195,7 @@
                                  <label> Se informa a:</label>
                                  Paciente <input type="checkbox" name="paciente">
                                  Familia <input type="checkbox" name="familia">
-                                 Acompañante <input type="checkbox" name="acompañante">
+                                 Acompañante <input type="checkbox" name="acompanante">
                                   No se informa <input type="checkbox" name="no_informa">
                                 
                                  
@@ -224,12 +223,13 @@
            
           </div>  <!-- FIN -->
 
-          <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" onclick="ingresarInforme()" >Aceptar</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
-          
-          </div>          
+                   
           </form>
+            <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" onclick="ingresarInforme()" >Aceptar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
+            
+            </div> 
         </div>
         
         
