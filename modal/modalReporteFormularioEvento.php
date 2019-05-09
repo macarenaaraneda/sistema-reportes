@@ -225,7 +225,7 @@
           </div>  <!-- FIN -->
 
           <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" ">Aceptar</button>
+          <button type="submit" class="btn btn-primary" onclick="ingresarInforme()" >Aceptar</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
           
           </div>          

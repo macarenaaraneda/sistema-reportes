@@ -2,7 +2,7 @@
 // Include config file
 require_once 'config.php';
 
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';
+//include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';  
 
 // Define variables and initialize with empty values
 $rut = $password = $tipo_usuario = $id_area_usuarios = $nombre = $apellido = $id_usuario = "";
@@ -176,6 +176,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login V6</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php
+    include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';  
+?>
 <!--===============================================================================================-->  
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
