@@ -1,0 +1,44 @@
+<HTML>
+    <HEAD>
+    <STYLE>
+    .hideable { position: relative; visibility: visible; }
+    </STYLE>
+    <SCRIPT>
+    function mostrar_ocultar(hide) {
+      if (document.layers)
+        document.contenido.visibility = hide ? 'hide' : 'show';
+      else {
+        var g = document.all ? document.all.contenido :
+                  document.getElementById('contenido');
+        g.style.visibility = hide ? 'hidden' : 'visible';
+      }
+    }
+    </SCRIPT>
+    </HEAD>
+    <BODY>
+    <TABLE>
+    <TR>
+    <TD VALIGN="top">
+    <FORM NAME="form0">
+            Mostrar?
+            <INPUT TYPE="checkbox" NAME="Accion"
+           ONCLICK="mostrar_ocultar(this.checked);"
+    >
+    </FORM>
+    </TD>
+    <TD>
+    <SPAN ID="contenido" CLASS="hideable">
+    <FORM NAME="form1">
+    <SELECT NAME="nombre">
+    <OPTION>Elige
+    <OPTION VALUE="tutores">Tutores
+    <OPTION VALUE="google">google
+    <OPTION VALUE="yahoo">yahoo
+    </SELECT>
+    </FORM>
+    </SPAN>
+    </TD>
+    </TR>
+    </TABLE>
+    </BODY>
+    </HTML>

@@ -4,10 +4,10 @@
 include ("../config.php");
  
 // check request
-if(isset($_POST))
+if(isset($_POST)) 
 {
-    $tipo_evento = "";
- 
+    $tipo_evento = ""; // variable para guardar el tipo de evento
+    $estado="";
     $fecha = mysqli_real_escape_string($link, $_POST["fecha"]);//fecha_creacion
     $unidad = mysqli_real_escape_string($link, $_POST["unidad"]);//areas_id_area 
     $evento = mysqli_real_escape_string($link, $_POST["evento"]); //nombre_evento
@@ -22,14 +22,14 @@ if(isset($_POST))
 
 
     //daño paciente
-    if ($dano_paciente == "on") {
-        $dano_paciente = "Verdadero";
+    if ($dano_paciente == "on") {  // si se chequea la existencia de daño
+        $dano_paciente = "Verdadero";  // recibe verdadero
     }else{
         $dano_paciente = "Falso";
     }
 
     //notificacion a paciente
-    if ($paciente == "on") {
+    if ($paciente == "on") {  
         $paciente = "Verdadero";
     }else{
         $paciente = "Falso";
@@ -58,35 +58,42 @@ if(isset($_POST))
 
     
     //seleccionamos tipo de evento
+    //Estado de analisis, evento es adverso o centinela viene predetermindo como en ¨espera¨ si es incidente no aplica analisis
     if ($dano_paciente == "Verdadero") {
         switch ($tipo_dano) {
             case 'Leve':
                 $tipo_evento = "Adverso";
+                $estado="En espera"; //Estado de analisis
+                
                 break;
             
             case 'Moderado':
                 $tipo_evento = "Adverso";
+                $estado="En espera";
+
                 break;
 
             case 'Grave':
                 $tipo_evento = "Centinela";
+                $estado="En espera";
                 break;    
         }
     }else{
         $tipo_evento = "Incidente";
+        $estado="No aplica";
     }
     
  
-    /*comprobado que se puede agregar trazabilidad y cambiar el estado*/
-    
+  
+    //inserta datos
     $query = "INSERT INTO eventos(fecha_creacion, areas_id_area, nombre_evento, dano, gravedad, notificacion_paciente, notificacion_familiares, notificacion_acompanantes,
-     notificacion_no_informa, comentario, tipo)
+     notificacion_no_informa, comentario, tipo, estado)
 
     VALUES('$fecha', '$unidad', '$evento', '$dano_paciente', '$tipo_dano', '$paciente', '$familia', '$acompanante', '$no_informa', '$comentario', '$tipo_evento')"; 
 
-    /*$query = "UPDATE pacientes, muestras SET tipo_muestra = '$tipo_muestra', establecimiento_origen = 'HPL' , areas_id_area = '$unidad_origen', num_frasco = '$num_frasco' WHERE id_muestra = '$id'";*/
-
-    /*$query = "UPDATE antibioticos SET tipo_muestra = '$tipo_muestra' WHERE id_antibiotico = '$id'";*/
+//La instrucción INSERT INTO se usa para agregar nuevos registros a una tabla MySQL:
+//INSERT INTO table_name (column1, column2, column3,...)
+//VALUES (value1, value2, value3,...)
 
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));

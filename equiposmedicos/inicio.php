@@ -13,13 +13,31 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 }
 ?>
 
-
+<!-- $_SESSION rut recorre rut de session_star-->
 <!DOCTYPE hmtl>
 <html>
 <head>
 
 <title>Administrador</title>
+<style type="text/css">
+  nav{
+    margin-bottom: 50px;
+  }
+  footer{
+    background-color: #33363b;
+    margin-top: 50px;
+    height: 
+  }
 
+  #copyright{
+    color: white;
+  }
+
+  img{
+    height: 60px;
+    width: 60px;
+  }
+</style>
 
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 <link rel="icon" type="image/x-icon" href="../favicon.ico" />
@@ -92,11 +110,105 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 <script type="text/javascript" src="../js/script.js"></script>
 
+
+
+
 </head>
 	<body>
+	
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Eventos reportados</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="../administrador/inicio.php">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Gestión de usuarios
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" data-toggle="modal" data-target="#myModalCrearUsuario" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Nuevo usuario</a>
+          <a class="dropdown-item" href="../administrador/inicio.php">Listar usuarios</a> <!--AGREGAR USUARIOS-->
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="../logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
 	<div class="display">
+
+
 	
 	</div>
+	
+
+
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div id="copyright" class="footer-copyright text-center py-3">
+      <img src="../resources/logo.png" class="rounded">
+      <span>© Copyright 2019 | Hospital Penco Lirquen.</span>  
+      
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
 	
 		
 	</body>
@@ -108,11 +220,3 @@ $(document).ready( function () {
 });
 </script>
 
-<!-- FUNCIÓN DE BOTÓN-->
-<script type="text/javascript">
-$(document).ready( function () {
- ingresarInformeBoton();
-	
-});
-
-</script>

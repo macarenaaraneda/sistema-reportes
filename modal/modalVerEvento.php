@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estilos.css">
 </head>
-<div class="modal fade" id="myModalFormularioReportes">
+<div class="modal fade" id="myModalVerEvento">
     <div class="modal-dialog modal-lg" style="width: 600px;">
       <div class="modal-content">
       
@@ -20,7 +20,7 @@
         
         <!-- Modal body -->
         <div class="modal-body">
-          <form id="formFormularioReportes" name="formFormularioReportes" method="post">
+          <form id="formVerEvento" name="formVerEvento" method="post">
 
 
 
@@ -31,7 +31,7 @@
                 <div class="form-group col-sm-12">
                     
                     <h2> Fecha de ocurrencia de evento:</h2>
-                    <input type="date" name="fecha" class="form-control">
+                    <input type="date" name="ver_fecha" class="form-control">
                 </div>  
              
             </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
@@ -40,7 +40,7 @@
                            
                                 <div class="form-group col-sm-12">
                                     <h2>Unidad o lugar de ocurrencia:</h2>
-                                    <select name="unidad" class="form-control">
+                                    <select name="ver_unidad" class="form-control">
 
                                         <option value="1">Salud mental</option>
                                         <option value="2">Cuidados paleativos</option>
@@ -74,7 +74,7 @@
                                 <div class="form-group col-sm-12">
 
                                     <h2> Tipo de evento que se reporta</h2>
-                                     <select name="evento" class="form-control">
+                                     <select name="ver_evento" class="form-control">
 
                                     <optgroup label="Atención obstetrica">
                                         <option value="Muerte fetal tardía">Muerte fetal tardía</option>
@@ -166,7 +166,7 @@
                             <div class="checkbox">
                                     
                             
-                                 <input type="checkbox" name="dano_paciente" id="dano_paciente1">
+                                 <input type="checkbox" name="ver_dano_paciente" id="dano_paciente1">
                                  <label for="dano_paciente1">Causa daño al paciente</label> 
                                  
                
@@ -178,7 +178,7 @@
                            
                                 <div class="form-group col-sm-12">
                                     <h2>Gravedad del daño:</h2>
-                                    <select name="tipo_dano" class="form-control">
+                                    <select name="ver_tipo_dano" class="form-control">
                                         
 
                                         <option value="Leve">Leve</option>
@@ -195,13 +195,13 @@
                                
                                     
                                  <h2>Se informa a:</h2> 
-                                 <input type="checkbox" name="paciente" id="paciente1">
+                                 <input type="checkbox" name="ver_paciente" id="paciente1">
                                  <label for="paciente1">Paciente</label> 
-                                 <input type="checkbox" name="familia" id="familia1">
+                                 <input type="checkbox" name="ver_familia" id="familia1">
                                  <label for="familia1">Familia</label> 
-                                 <input type="checkbox" name="acompanante" id="acompanante1">
+                                 <input type="checkbox" name="ver_acompanante" id="acompanante1">
                                  <label for="acompanante1">Acompañante</label> 
-                                 <input type="checkbox" name="no_informa" id="no_informa1">
+                                 <input type="checkbox" name="ver_no_informa" id="no_informa1">
                                  <label for="no_informa1">No se informa</label> 
                                 
                             
@@ -217,7 +217,7 @@
                   <div class="formulario"> 
                         <div class="form-group col-sm-12">
                            <h2>Breve descripción del evento (Máx 250 caracteres):</h2>
-                           <textarea cols="50" rows="5" name="comentario" maxlength="250" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+                           <textarea cols="50" rows="5" name="ver_comentario" maxlength="250" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
                                                
 
                         </div> 
@@ -239,6 +239,7 @@
             <button type="submit" class="btn btn-primary" onclick="ingresarInforme()" >Aceptar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
             
+            <input type="hidden" id="id_evento_oculto_id_evento">
             </div> 
            
         </div>

@@ -124,6 +124,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     case '19':
                                    header("location: Urgencia/inicio.php");
                                    break; 
+                                   case '20':
+                                   header("location: equiposmedicos/inicio.php");
+                                   break; 
 
  
                               
@@ -177,9 +180,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
-    include 'C:\xampp\htdocs\sistema-reportes\modal\modalReporteFormularioEvento.php';?>
+
+    include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';?>
+    
+
+
 <!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> 
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -205,7 +212,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 <body>
     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModalFormularioReportes">Primary</button> 
@@ -214,11 +223,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="wrap-login100 p-t-85 p-b-20">
                 <form class="login100-form validate-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" id="formLoginUsuario">  
                     <span class="login100-form-title p-b-70">
-                        Bienvenido 
+                        Bienvenido
+                        
                     </span>
-                    <span class="login100-form-avatar">
-                        <img src="images/avatar-01.jpg" alt="AVATAR">
-                    </span>
+                   
 
                     <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresar usuario">
                         <input class="input100" type="text" name="rut" value="<?php echo $rut; ?>">
@@ -263,6 +271,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <script src="js/main.js"></script>
 
     <script src="js/script.js"></script>
+   
+    
 
 </body>
 </html>
