@@ -108,11 +108,3 @@ $(document).ready( function () {
 });
 </script>
 
-<!-- FUNCIÓN DE BOTÓN-->
-<script type="text/javascript">
-$(document).ready( function () {
- ingresarInformeBoton();
-	
-});
-
-</script>

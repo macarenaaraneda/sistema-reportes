@@ -8,7 +8,7 @@ include ("../config.php");
 if(isset($_POST['id_evento']) && isset($_POST['id_evento']) != "") 
 {
     // obtenemos id del evento
-    $evento_id = $_POST['id'];
+    $evento_id = $_POST['id_evento'];
   
     //select para modificar muestra pero trayendo informacion del paciente, muestras y trazabilidad
     $query = "                SELECT *

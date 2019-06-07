@@ -217,20 +217,14 @@
                   <div class="formulario"> 
                         <div class="form-group col-sm-12">
                            <h2>Breve descripción del evento (Máx 250 caracteres):</h2>
-                           <textarea cols="50" rows="5" name="comentario" maxlength="250" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+                           <textarea cols="50" rows="5" name="comentario" maxlength="250"></textarea>
                                                
 
                         </div> 
            
                     </div> 
                 
-                     <!--CONTADOR DE CARACTERES NO PESCA-->
-                     <div class="row">
-                       <div class="form-group col-sm-12">
-                                 Caracteres:
-                            <input type="text" name=caracteres size=2>
-                            </div>
-                       </div>  <!-- FIN CONTADOR DE CARACTERES-->
+                 
                      </div>  
                     
 
@@ -250,4 +244,3 @@
   </div>
 
 </div>
-

@@ -2,15 +2,15 @@
 session_start();
 
 
-include '../config.php';
-
+include '../config.php'; // acceso
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalCrearUsuario.php'; 
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEventos.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEstado.php';
 
 
 if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
  //header("location: login.php")
-
-
 
    exit;
 }
@@ -22,7 +22,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <head>
 
 <title>Administrador</title>
-<style type="text/css">
+<style type="text/css"> /* ESTILOS PARA ADMIN css*/
   nav{
     margin-bottom: 50px;
   }
@@ -42,8 +42,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   }
 </style>
 
-<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
-<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,6 +92,10 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+<!--AGREGUÉ ESTO PARA Librito-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
 
 <!--JQuery DataTables plugin-->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
@@ -128,7 +131,9 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+  <!-- https://getbootstrap.com/docs/4.0/components/navbar/-->
+  <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
+    <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
       <li class="nav-item active">
         <a class="nav-link" href="../administrador/inicio.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
@@ -138,7 +143,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" data-toggle="modal" data-target="#myModalCrearUsuario" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Nuevo usuario</a>
-          <a class="dropdown-item" href="../administrador/inicio.php">Listar usuarios</a> <!--AGREGAR USUARIOS-->
+           <!--Agregar otra opción de ser necesario-->
         </div>
       </li>
     </ul>
@@ -162,7 +167,8 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 	
 
 
-<!-- Footer -->
+<!-- Footer PIE DE PÁGINA-->
+<!-- Bootstrap footer https://mdbootstrap.com/docs/jquery/navigation/footer/-->
 <footer class="page-footer font-small special-color-dark pt-4">
 
     <!-- Footer Elements -->
@@ -203,7 +209,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
     <!-- Copyright -->
     <div id="copyright" class="footer-copyright text-center py-3">
-      <img src="../resources/logo.png" class="rounded">
+      <!-- LOGO <img src="../resources/logo.png" class="rounded"> Para poner logo --> 
       <span>© Copyright 2019 | Hospital Penco Lirquen.</span>  
       
     </div>

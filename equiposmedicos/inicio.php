@@ -3,6 +3,9 @@ session_start();
 
 
 include '../config.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalFormularioAnalisis.php';
+
 
 /* Si se reconoce rut y contraseña de administrador ingresar*/
 if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
@@ -39,8 +42,6 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   }
 </style>
 
-<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
-<link rel="icon" type="image/x-icon" href="../favicon.ico" />
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -90,6 +91,9 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+<!--AGREGUÉ ESTO PARA Librito-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!--JQuery DataTables plugin-->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
@@ -129,15 +133,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
       <li class="nav-item active">
         <a class="nav-link" href="../administrador/inicio.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Gestión de usuarios
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" data-toggle="modal" data-target="#myModalCrearUsuario" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Nuevo usuario</a>
-          <a class="dropdown-item" href="../administrador/inicio.php">Listar usuarios</a> <!--AGREGAR USUARIOS-->
-        </div>
-      </li>
+    
     </ul>
   </div>
   <div>
@@ -200,7 +196,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
     <!-- Copyright -->
     <div id="copyright" class="footer-copyright text-center py-3">
-      <img src="../resources/logo.png" class="rounded">
+     <!-- <img src="../resources/logo.png" class="rounded"> -->
       <span>© Copyright 2019 | Hospital Penco Lirquen.</span>  
       
     </div>

@@ -3,12 +3,11 @@
    
    include ("../config.php");
    
-   //cuando entramos a las vistas donde necesitamos realizar check (laboratorio y en especialidades adminisrativas) debemos agregar al thead las opciones de laboratorio para validar recepcion de las muestras desde las distintas unidades clinicas y tambien cuando estas llegan desde el hospital higueras
-   
-
+  // si el usuario es administrador muestro la tabla con todos los datos dentro del tr ( fila o celda)
+   // si el usuario es admin:
    if($_SESSION['tipo_usuario'] == "Administrador"){
       $data = '<table id="tablaEventos" class="display table table-hover"  style="width:100%; margin: 0 auto;">
-        <thead class=" thead-dark"> 
+        <thead class=" thead-light"> <!-- puede ser dark -->
 
            
         <tr>
@@ -25,10 +24,10 @@
         <th>Comentarios</th> 
         <th>Fecha</th>
         <th>Estado analisis</th>
-        <th>Opciones</th>
+        <th>Opciones</th> <!-- BOTONES -->
         </tr>
     </thead>';  
-
+  // SI EL USUARIO ES JEFATURA MUESTRO LO SIGUIENTE:
    }elseif($_SESSION['tipo_usuario'] == "Jefatura"){
 
     $data = '<table id="tablaEventos" class="display table table-hover"  style="width:100%; margin: 0 auto;">
@@ -54,35 +53,26 @@
     </thead>';  
 
 
-
-
-
-
-
    }
    
    
    
    
+  
    
-   
-   /*id_area_usuarios
-   USUARIOS
-   1- FARMACIA
-   2- MEDICINA
-   3- LABORATORIO
-   */
-   
-   //dependiendo del usuario que loguea se muestran los pacientes que le corresponde a cada tipo de usuario
-   //Administrador no listara pacientes, solo se encargara de generar listas de usuarios y hacer gestion de ellos
+   //dependiendo del usuario que logea se muestra TODO O ALGUNAS COSAS CON SELECTO FROM Y WHERE
+   // SI ES ADMINISTRADOR OBTIENE LOS DATOS DE BASE DE DATOS Y TABLA EVENTOS
+   // https://www.campusmvp.es/recursos/post/Fundamentos-de-SQL-Como-realizar-consultas-simples-con-SELECT.aspx
    if($_SESSION['tipo_usuario'] == "Administrador"){
    
-       //como es vista administrador deberia poder ver trazabilidad de una muestra al igual que lab 
+       // selecciono todo de eventos ordenado por fecha de creación de la mas nueva a la mas antigua
        $query = 
-               "SELECT * FROM eventos 
-                ORDER BY id_evento DESC";
+               "SELECT * FROM eventos
+                
+                ORDER BY fecha_creacion DESC";
    
-   
+   // si es jefatura se mostrará segun la area a la cual pertenezca la jefaura
+   // 
    }elseif ($_SESSION['tipo_usuario'] == "Jefatura") {
        switch ($_SESSION['areas_id_area']) {
            case '1':
@@ -213,7 +203,7 @@
      ;
    }
    
-   
+   // comprueba que existe una fila, VALIDACIÓN
    if (!$result = mysqli_query($link, $query)) {
     exit(mysqli_error($link));
    }  
@@ -349,7 +339,7 @@
                $fecha_chilena = date("d-m-y", strtotime($fecha_parseada[0]));
               
                /**/
-                //ESTADO DE ANALISIS
+                //ESTADO DE ANALISIS colores
                if ($row['estado'] == 'No aplica') {
                     
                 $estadoEventosBadge = '<span class="badge badge-success">'.$row['estado'].'</span>';
@@ -362,11 +352,8 @@
 
                 $estadoEventosBadge = '<span class="badge badge-success">'.$row['estado'].'</span>';
 
-              }elseif ($row['estado'] == 'En espera') {
-
-                $estadoEventosBadge = '<span class="badge badge-light">'.$row['estado'].'</span>';
-
               }
+              //AGREGAR BOTONES AQUÍ PARA MOSTRAR
 
                //preguntamos por el tipo de sesion que trae session y escribimos codigo html/php para cada tipo de usuario logueado (concatenado) 
                switch ($_SESSION['tipo_usuario']) {//tipo de usuario
@@ -392,13 +379,16 @@
                             <td id="botonesTabla">
                               
                             <button  type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalVerEvento" data-backdrop="static" data-keyboard="false" onclick="obtenerDetallesEventos('.$row['id_evento'].')">
+                            <span><i class="fas fa-book-open"></i></span></button>
+                            
+                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalActualizarEventos" data-backdrop="static" data-keyboard="false" onclick="obtenerDetallesEventosParaActualizar('.$row['id_evento'].')">
                             <span><i class="fas fa-edit"></i></span></button>
 
-                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioBoton" data-backdrop="static" data-keyboard="false">
-                            <span><i class="fas fa-edit"></i></span></button>
+                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalActualizarEstado" data-backdrop="static" data-keyboard="false" onclick="obtenerEstadosParaActualizar('.$row['id_evento'].')">
+                            <span><i class="fas fa-bell"></i></span></button>
+                            
 
-                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioBoton" data-backdrop="static" data-keyboard="false">
-                            <span><i class="fas fa-edit"></i></span></button>
+                            
 
                             </td>
                         </tr>';
@@ -424,18 +414,16 @@
                     <td> '.$fecha_chilena.'</td>
                     <td> '.$estadoEventosBadge.'</td>
                     <td id="botonesTabla">
+                      <!--COLOCAR MYMODAL CORRECTO EN CADA BOTON -->
+                      <button  type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalVerEvento" data-backdrop="static" data-keyboard="false" onclick="obtenerDetallesEventos('.$row['id_evento'].')">
+                      <span><i class="fas fa-book-open"></i></span></button>
                       
-                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioBoton" data-backdrop="static" data-keyboard="false">
-                            <span><i class="fas fa-edit"></i></span></button>
 
-                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioBoton" data-backdrop="static" data-keyboard="false">
-                            <span><i class="fas fa-edit"></i></span></button>
-
-                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioBoton" data-backdrop="static" data-keyboard="false">
+                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioAnalisis" data-backdrop="static" data-keyboard="false" onclick="obtenerDetallesEventosParaAnalisis('.$row['id_evento'].')">
                             <span><i class="fas fa-edit"></i></span></button>
                             
 
-                    </td>
+                    </td>            
                 </tr>';
                  break;
 
@@ -444,7 +432,7 @@
            }
        }else{
 
-           // Sí no se muestran los datos debemos colocar esto dependiendo del numero de columnas por lo que deberia ir un switchpreguntando si es admin o basico (farmacia, medicina y laboratorio)
+           // Sí no se muestran los datos 
           if($_SESSION['tipo_usuario'] == "Administrador"){
             $data .= '<tr><td colspan="13">¡No se encontraron datos!</td></tr>';
              
