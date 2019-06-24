@@ -1,91 +1,189 @@
-/* ----- ----- ----- ----- */
+
+
+
+/* ----- FORMULARIO REPORTES----- ----- ----- */
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0; }
-  
-  body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align:center;
+  padding: 20px;
+  color: rgb(8, 10, 12); /*COLOR TEXTO*/
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
     font-size: 16px;
-    background: #fff;
-    font-family: "Roboto"; }
-  
-  a {
-    color: #FF4136; }
-  
-  .wrap {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto; }
-  
-  .info {
-    text-align:center;
-    padding: 20px;
-    color: rgb(8, 10, 12); /*COLOR TEXTO*/
-    border-bottom: 1px solid #ccc; }
-    .info p {
-      margin-top: 20px; }
-  
-  .formulario {
-    /* --------------------------------------- */
-    /* ----- Radio Button */
-    /* --------------------------------------- */
-    /* --------------------------------------- */
-    /* ----- Checkbox */
-    /* --------------------------------------- */ }
-    .formulario h2 {
-      font-size: 16px;
-      color: rgb(4, 5, 5);
-      margin-bottom: 6px; /* distancia entre titulos y opciones*/
-      margin-left: -5px; }  /* titulos mas a la derecha o mas a la izquierda */
-    .formulario > div {
-      padding: 8px 0;
-      border-bottom: 0px solid #ccc; } /* Linea que divide los div, mejor en cero*/
-    .formulario .radio label,
-    .formulario .checkbox label {
-      display: inline-block;
-      cursor: pointer;
-      color:  rgb(7, 9, 10);
-      position: relative;
-      padding: 5px 15px 5px 51px;
-      font-size: 1em;
-      border-radius: 5px;
-      -webkit-transition: all 0.3s ease;
-      -o-transition: all 0.3s ease;
-      transition: all 0.3s ease; }
-      .formulario .radio label:hover,
-      .formulario .checkbox label:hover {
-        background: rgba(255, 65, 54, 0.1); }
-      .formulario .radio label:before,
-      .formulario .checkbox label:before {
-        content: "";
-        display: inline-block;
-        width: 17px;
-        height: 17px;
-        position: absolute;
-        left: 15px;
-        border-radius: 50%;
-        background: none;
-        border: 3px solid  #0074D9 ; }
-    .formulario input[type="radio"] {
-      display: none; }
-      .formulario input[type="radio"]:checked + label:before {
-        display: none; }
-      .formulario input[type="radio"]:checked + label {
-        padding: 5px 15px;
-        background:  #0074D9;
-        border-radius: 2px;
-        color: #fff; }
+    color: rgb(4, 5, 5);
+    margin-bottom: 6px; /* distancia entre titulos y opciones*/
+    margin-left: -5px; }  /* titulos mas a la derecha o mas a la izquierda */
+  .formulario > div {
+    padding: 8px 0;
+    border-bottom: 0px solid #ccc; } /* Linea que divide los div, mejor en cero*/
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color:  rgb(7, 9, 10);
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
     .formulario .checkbox label:before {
-      border-radius: 3px; }
-    .formulario .checkbox input[type="checkbox"] {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid  #0074D9 ; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
       display: none; }
-      .formulario .checkbox input[type="checkbox"]:checked + label:before {
-        display: none; }
-      .formulario .checkbox input[type="checkbox"]:checked + label {
-        background:  rgb(19, 22, 24);
-        color: #fff;
-        padding: 5px 15px; }
-  
-  /*# sourceMappingURL=estilos.css.map */
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background:  #0074D9;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background:  rgb(19, 22, 24);
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+
+/* ----- FIN FORMULARIO REPORTES----- ----- ----- */
+/* -----  FIN FORMULARIO REPORTES----- ----- ----- */
+
+
+
+
+
+
+
+
+
+/* LOGIN  */
+/* LOGIN  */
+/* LOGIN  */
+/* LOGIN  */
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+  height: 40px;
+  background: #FFF;
+ 
+}
+
+.sidenav {
+  height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 1px;
+}
+
+
+.main {
+  padding: 200px 215px; /*posición en el espacio de usuario*/
+}
+
+@media screen and (max-height: 420px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 800px) {
+  .login-form{
+      margin-top: 10%;
+  }
+
+  .register-form{
+      margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%; 
+  }
+
+  .sidenav{
+      width: 56%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+
+  .login-form{
+      margin-top: 80%;
+  }
+
+  .register-form{
+      margin-top: 80%;
+  }
+}
+
+
+.login-main-text{
+  margin-top: 10%;
+  padding: 100px;
+  color: #fff;
+}
+
+.login-main-text h2{
+  font-weight: 400;
+}
+
+.btn-black{
+  background-color: rgb(150, 148, 148) !important;
+  color: #fff;
+}
+
+/* FIN LOGIN  */
+/* FIN LOGIN  */
+/*FIN LOGIN  */

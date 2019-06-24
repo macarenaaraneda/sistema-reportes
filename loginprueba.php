@@ -2,6 +2,8 @@
 // Include config file
 require_once 'config.php';
 
+//include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';  
+
 // Define variables and initialize with empty values
 $rut = $password = $tipo_usuario = $id_area_usuarios = $nombre = $apellido = $id_usuario = "";
 $rut_err = $password_err = "";
@@ -70,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                    header("location: cuidadospaleativos/inicio.php");
                                    break; 
                                    
-                                 case '3':
+                                case '3':
                                    header("location: especialidadesodontologicas/inicio.php");
                                    break; 
                                case '4':
@@ -126,6 +128,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                    header("location: equiposmedicos/inicio.php");
                                    break; 
 
+ 
                               
                                }
                            }
@@ -177,12 +180,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
-    include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';?>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
+    include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';?>
+    
+
+
 <!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> 
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -202,50 +206,65 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="css/estilos.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
- 
-<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-<!------ Include the above in your HEAD tag ---------->
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 </head>
-<body>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-<div class="sidenav">
-         <div class="login-main-text">
-            <h1>Formulario<br> Eventos </h1>
-            <h6>Reporte de forma anónima y voluntaria.</h6>
-             <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#myModalFormularioReportes">Aquí</button>
-         </div>
-      </div>
-      <div class="main">
-         <div class="col-md-6 col-sm-12">
-            <div class="login-form">
-               <form class="login-form validate-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" id="formLoginUsuario">
-                  <div class="form-group" data-validate = "Ingresar usuario">
-                     <label>Usuario</label>
-                    
-                     <input type="text" name= "rut" value="<?php echo $rut; ?>" class="form-control" placeholder="Ingrese rut">
-                  </div>
-                  <div class="form-group" data-validate="Ingresar Contraseña" <?php echo (!empty($password_err)) ? 'has-error' : '';?>>
-                     <label>Contraseña</label>
-                     <input type="password"name="password" class="form-control" placeholder="Ingrese contraseña">
-                  </div>
-                 
-                  <button type="submit" class="btn btn-black">Iniciar</button>
-                  
-               </form>
-            </div>
-         </div>
-      </div>
 
-    <div id="dropDownSelect1"></div>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+<div id="login-overlay" class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Login to site.com</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="well">
+                          <form id="formLoginUsuario" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" novalidate="novalidate">
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username</label>
+                                  <input type="text" class="form-control" id="rut" name="rut" value="<?php echo $rut; ?>" required="" title="Please enter you rut" placeholder="usuario">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                              
+                              <button type="submit" class="btn btn-success btn-block">Login</button>
+                              
+                          </form>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                      <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                      <ul class="list-unstyled" style="line-height: 2">
+                          <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                          <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                          <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                          <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                          <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                       
+                      </ul>
+                      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModalFormularioReportes">Primary</button> 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
     
+
+  
+  <div id="dropDownSelect1"></div>
 <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -262,8 +281,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>
+
     <script src="js/script.js"></script>
+   
+    
 
 </body>
 </html>
-

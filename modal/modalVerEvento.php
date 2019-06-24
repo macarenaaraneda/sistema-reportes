@@ -27,19 +27,19 @@
           <!-- Formulario -->
           <div>
 
-            <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
+            <div class="ver_formulario"> <!--FECHA OCURRENCIA EVENTO -->
                 <div class="form-group col-sm-12">
                     
-                    <h2> Fecha de ocurrencia de evento:</h2>
+                    <h5> Fecha de ocurrencia de evento:</h5>
                     <input disabled type="date" name="ver_fecha" class="form-control" id="ver_fecha">
                 </div>  
              
             </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
 
-            <div class="formulario">  <!--SELECT LUGAR DE OCURRENCIA -->
+            <div class="ver_formulario">  <!--SELECT LUGAR DE OCURRENCIA -->
                            
                                 <div class="form-group col-sm-12">
-                                    <h2>Unidad o lugar de ocurrencia:</h2>
+                                    <h5>Unidad o lugar de ocurrencia:</h5>
                                     <select disabled name="ver_unidad" class="form-control" id="ver_unidad">
 
                                         <option value="1">Salud mental</option>
@@ -70,10 +70,10 @@
 
 <!-- EVENTOS ADVERSOS -->
 
-                            <div class="formulario"> <!--SELECT TIPO DE EVENTO ADVERSO -->
+                            <div class="ver_formulario"> <!--SELECT TIPO DE EVENTO ADVERSO -->
                                 <div class="form-group col-sm-12">
 
-                                    <h2> Tipo de evento que se reporta</h2>
+                                    <h5> Tipo de evento que se reporta</h5>
                                      <select disabled name="ver_evento" class="form-control" id="ver_evento">
 
                                     <optgroup label="Atención obstetrica">
@@ -160,24 +160,24 @@
 
                             </div>  <!-- FIN SELECT TIPO DE EVENTO ADVERSO -->
 
-                            <div class="formulario"> <!--CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
+                            <div class="ver_formulario"> <!--CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
                                 
                             <div class="form-group col-sm-12">
                             <div class="checkbox">
                                     
                             
                                  <input disabled type="checkbox" name="ver_dano_paciente" id="ver_dano_paciente">
-                                 <label for="dano_paciente1">Causa daño al paciente</label> 
+                                 <label for="dano_paciente">Causa daño al paciente</label> 
                                  
                
                                 </div>
                                 </div>
                             </div> <!-- FIN CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
 
-                               <div class="formulario"> <!--SELECT GRAVEDAD DEL DAÑO -->
+                               <div class="ver_formulario"> <!--SELECT GRAVEDAD DEL DAÑO -->
                            
                                 <div class="form-group col-sm-12">
-                                    <h2>Gravedad del daño:</h2>
+                                    <h5>Gravedad del daño:</h5>
                                     <select disabled name="ver_tipo_dano" class="form-control" id="ver_tipo_dano">
                                         
 
@@ -189,20 +189,20 @@
                                 </div>
                             </div> <!-- FIN SELECT GRAVEDAD DEL DAÑO -->
 
-               <div class="formulario"> <!--CHECKBOX DE SE INFORMA A -->
+               <div class="ver_formulario"> <!--CHECKBOX DE SE INFORMA A -->
                <div class="form-group col-sm-12">
                <div class="checkbox">
                                
                                     
-                                 <h2>Se informa a:</h2> 
+                                 <h5>Se informa a:</h5> 
                                  <input disabled type="checkbox" name="ver_paciente" id="ver_paciente">
-                                 <label for="paciente1">Paciente</label> 
+                                 <label for="ver_paciente">Paciente</label> 
                                  <input disabled type="checkbox" name="ver_familia" id="ver_familia">
-                                 <label for="familia1">Familia</label> 
+                                 <label for="ver_familia">Familia</label> 
                                  <input disabled type="checkbox" name="ver_acompanante" id="ver_acompanante">
-                                 <label for="acompanante1">Acompañante</label> 
+                                 <label for="ver_acompanante">Acompañante</label> 
                                  <input disabled type="checkbox" name="ver_no_informa" id="ver_no_informa">
-                                 <label for="no_informa1">No se informa</label> 
+                                 <label for="ver_no_informa">No se informa</label> 
                                 
                             
                                 
@@ -214,10 +214,10 @@
 
                             </div> <!-- FIN CHECKBOX DE SE INFORMA A -->
 
-                  <div class="formulario"> 
+                  <div class="ver_formulario"> 
                         <div class="form-group col-sm-12">
-                           <h2>Breve descripción del evento (Máx 250 caracteres):</h2>
-                           <textarea cols="50" rows="5" disabled name="ver_comentario" id="ver_comentario" maxlength="250" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+                           <h5>Breve descripción del evento:</h5>
+                           <textarea cols="50" rows="5" disabled name="ver_comentario" id="ver_comentario" maxlength="250"  ></textarea>
                                                
 
                         </div> 

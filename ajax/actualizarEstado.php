@@ -22,9 +22,7 @@ if(isset($_POST))
 
             ";
 
-    /*$query = "UPDATE pacientes, muestras SET tipo_muestra = '$tipo_muestra', establecimiento_origen = 'HPL' , areas_id_area = '$unidad_origen', num_frasco = '$num_frasco' WHERE id_muestra = '$id'";*/
 
-    /*$query = "UPDATE antibioticos SET tipo_muestra = '$tipo_muestra' WHERE id_antibiotico = '$id'";*/
 
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));

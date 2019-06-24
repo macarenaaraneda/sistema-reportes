@@ -14,7 +14,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Formulario de Eventos Adversos</h4>
+          <h4 class="modal-title">Actualizar tipo evento</h4>
           <button type="button" class="close" data-dismiss="modal" onclick="limpiarsubirformulario()">&times;</button>
         </div>
         
@@ -30,29 +30,35 @@
             
 
            
+                         
 
 
 
-
-                            <div class="formulario"> <!--CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
-                                
-                            <div class="form-group col-sm-12">
-                            <div class="checkbox">
-                                    
-                            
-                                 <input type="checkbox" name="actualizar_dano_paciente" id="actualizar_dano_paciente">
-                                 <label for="dano_paciente1">Causa daño al paciente</label> 
-                                 
-               
-                                </div>
-                                </div>
-                            </div> <!-- FIN CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
-
-                               <div class="formulario"> <!--SELECT GRAVEDAD DEL DAÑO -->
+                         
+                <!--   <div class="formulario"> 
                            
-                                <div class="form-group col-sm-12">
-                                    <h2>Gravedad del daño:</h2>
-                                    <select name="actualizar_tipo_dano" id= "actualizar_tipo_dano"  class="form-control">
+                           <b class="control-label col-sm-12"> Causa daño al paciente:</b>
+                           <div class="form-group col-sm-12">
+            
+                           <select name="actualizar_dano_paciente" id= "actualizar_dano_paciente"  class="form-control">
+                                      
+
+                                      <option value="Verdadero">Si</option>
+                                      <option value="Falso">No</option>
+                                   
+                                      
+                                  </select>
+                              </div>
+                          </div>  --> 
+
+                       
+
+                    <!--         <div class="formulario"> 
+                           
+                             <b class="control-label col-sm-12">Gravedad del daño:</b>
+                             <div class="form-group col-sm-12">
+              
+                             <select name="actualizar_tipo_dano" id= "actualizar_tipo_dano"  class="form-control">
                                         
 
                                         <option value="Leve">Leve</option>
@@ -61,7 +67,23 @@
                                         
                                     </select>
                                 </div>
-                            </div> <!-- FIN SELECT GRAVEDAD DEL DAÑO -->
+                            </div> -->
+
+                            <div class="formulario"> 
+                           
+                             <b class="control-label col-sm-12">Tipo evento:</b>
+                             <div class="form-group col-sm-12">
+              
+                             <select name="actualizar_tipo_evento" id= "actualizar_tipo_evento"  class="form-control">
+                                        
+
+                                        <option value="Incidente">Incidente</option>
+                                        <option value="Adverso">Adverso</option>
+                                        <option value="Centinela">Centinela</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>  
 
                
 

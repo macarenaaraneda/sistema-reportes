@@ -3,70 +3,47 @@
   color: red;
 }
 </style>
-
-
-
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estilos.css">
 </head>
-<div class="modal fade" id="myModalFormularioReportes">
+<div class="modal fade" id="myModalVerFormularioAnalisis">
     <div class="modal-dialog modal-lg" style="width: 600px;">
       <div class="modal-content">
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Formulario de Eventos Adversos</h4>
-          <button type="button" class="close" data-dismiss="modal" >&times;</button>
+          <h4 class="modal-title">Ver Análisis</h4>
+          <button type="button" class="close" data-dismiss="modal" onclick="limpiarsubirformulario()">&times;</button>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
-          <form id="formFormularioReportes" name="formFormularioReportes" method="post">
 
+          <form id="formVerFormularioAnalisis" name="formVerFormularioAnalisis" method="post">
 
+         <!-- <input type="hidden" id="id_evento_oculto_id_evento">
+            <input type="hidden" id="eventos_areas_id_area">  -->
 
           <!-- Formulario -->
           <div>
-          <div class="formulario">
-          <div class="form-group col-sm-12">
-                    
-           <h2>Nombre paciente:</h2>
-      <input name="nombre" class="form-control" id="nombre">
-         </div>
-         </div>
-  <div class="formulario">
-  <div class="form-group col-sm-12">              
-        <h2>Apellidos:</h2>
-      <input name="apellidos" class="form-control" id="apellidos">
-    </div>
-  </div>
-  <div class="formulario">
-  <div class="form-group col-sm-12">
-                    
-    <h2>Rut:</h2>
-      <input name="rut" class="form-control" id="rut">
-    </div>
-  </div>
 
-
-            <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
+          <div class="ver_formulario"> <!--FECHA OCURRENCIA EVENTO -->
                 <div class="form-group col-sm-12">
                     
-                    <h2> Fecha de ocurrencia de evento:</h2>
-                    <input type="date" name="fecha" id= "fecha" class="form-control">
-                   
+                    <h5> Fecha de ocurrencia de evento:</h5>
+                    <input disabled type="date" name="ver_fecha_analisis" id= "ver_fecha_analisis" class="form-control">
                 </div>  
              
             </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
 
-            <div class="formulario">  <!--SELECT LUGAR DE OCURRENCIA -->
+            <div class="ver_formulario">  <!--SELECT LUGAR DE OCURRENCIA -->
                            
                                 <div class="form-group col-sm-12">
-                                    <h2>Unidad o lugar de ocurrencia:</h2>
-                                    <select name="unidad" id= "unidad" class="form-control" >
-                                        <option selected >
+                                    <h5>Unidad o lugar de ocurrencia:</h5>
+                                    <select disabled name="ver_unidad_analisis" id="ver_unidad_analisis" class="form-control" >
+
                                         <option value="1">Salud mental</option>
                                         <option value="2">Cuidados paleativos</option>
                                         <option value="3">Especialidades odontológicas</option>
@@ -91,16 +68,12 @@
                                 </div>
             </div>  <!-- FIN SELECT LUGAR DE OCURRENCIA -->
 
-
-
-<!-- EVENTOS ADVERSOS -->
-
-                            <div class="formulario"> <!--SELECT TIPO DE EVENTO ADVERSO -->
+            <div class="ver_formulario"> <!--SELECT TIPO DE EVENTO ADVERSO -->
                                 <div class="form-group col-sm-12">
 
-                                    <h2> Tipo de evento que se reporta</h2>
-                                     <select name="evento" id= "evento" class="form-control">
-                                    <option selected >
+                                    <h5>Evento reportado:</h5>
+                                     <select disabled name="ver_evento_analisis" id="ver_evento_analisis" class="form-control" >
+
                                     <optgroup label="Atención obstetrica">
                                         <option value="Muerte fetal tardía">Muerte fetal tardía</option>
                                         <option value="Muerte materna">Muerte materna</option>
@@ -185,85 +158,50 @@
 
                             </div>  <!-- FIN SELECT TIPO DE EVENTO ADVERSO -->
 
-                            <div class="formulario"> <!--CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
-                                
-                            <div class="form-group col-sm-12">
-                            <div class="checkbox">
-                                    
-                            
-                                 <input type="checkbox" name="dano_paciente" id="dano_paciente">
-                                 <label for="dano_paciente">Causa daño al paciente</label> 
-                                 
-               
-                                </div>
-                                </div>
-                            </div> <!-- FIN CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
+           
 
-                               <div class="formulario"> <!--SELECT GRAVEDAD DEL DAÑO -->
-                           
-                                <div class="form-group col-sm-12">
-                                    <h2>Gravedad del daño:</h2>
-                                    <select name="tipo_dano" id= "tipo_dano" class="form-control">
-                                        
-
-                                        <option value="Leve">Leve</option>
-                                        <option value="Moderado">Moderado</option>
-                                        <option value="Grave">Grave</option>
-                                        
-                                    </select>
-                                </div>
-                            </div> <!-- FIN SELECT GRAVEDAD DEL DAÑO -->
-
-               <div class="formulario"> <!--CHECKBOX DE SE INFORMA A -->
-               <div class="form-group col-sm-12">
-               <div class="checkbox">
-                               
-                                    
-                                 <h2>Se informa a:</h2> 
-                                 <input type="checkbox" name="paciente" id="paciente">
-                                 <label for="paciente">Paciente</label> 
-                                 <input type="checkbox" name="familia" id="familia">
-                                 <label for="familia">Familia</label> 
-                                 <input type="checkbox" name="acompanante" id="acompanante">
-                                 <label for="acompanante">Acompañante</label> 
-                                 <input type="checkbox" name="no_informa" id="no_informa">
-                                 <label for="no_informa">No se informa</label> 
-                                
-                            
-                                
-                                 
-                                </div>
-                                
-                                </div>
-
-
-                            </div> <!-- FIN CHECKBOX DE SE INFORMA A -->
-
-                  <div class="formulario"> 
+                        <div class="ver_formulario"> 
                         <div class="form-group col-sm-12">
-                           <h2>Breve descripción del evento (Máx 250 caracteres):</h2>
-                           <textarea cols="50" rows="5" name="comentario" maxlength="250"></textarea>
+                           <h5>Causas detectadas:</h5>
+                           <textarea disabled cols="50" rows="5" name="ver_causas" id= "ver_causas" maxlength="250"></textarea>
                                                
 
                         </div> 
            
                     </div> 
-                
-                 
-                     </div>  
 
+                    <div class="ver_formulario"> 
+                        <div class="form-group col-sm-12">
+                           <h5>Propuestas de mejora:</h5>
+                           <textarea disabled cols="50" rows="5" name="ver_propuestas" id="ver_propuestas" maxlength="250"></textarea>
+                                         
+
+                        </div> 
+           
+                    </div> 
+
+                    
+
+
+                           
+
+                         
 
                
 
-          </form>
-           
-           
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" onclick="ingresarInforme()" >Aceptar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
-             </div>  
-            
+              
+                
+                 
+                     </div>  
+                    
 
+          </form>
+            <div class="modal-footer">
+           
+            <button type="button" class="btn btn-danger" data-dismiss="modal" >Aceptar</button>
+            <input type="hidden" id="id_evento_oculto_id_evento">   
+            </div> 
+           
         </div>
         
         

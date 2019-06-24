@@ -7,6 +7,7 @@ include 'C:\xampp\htdocs\sistemaReportes\modal\modalCrearUsuario.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEventos.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEstado.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerAnalisis.php';
 
 
 if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
@@ -21,10 +22,10 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <html>
 <head>
 
-<title>Administrador</title>
+
 <style type="text/css"> /* ESTILOS PARA ADMIN css*/
   nav{
-    margin-bottom: 50px;
+    margin-bottom: 8px;
   }
   footer{
     background-color: #33363b;
@@ -36,10 +37,12 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
     color: white;
   }
 
-  img{
-    height: 60px;
-    width: 60px;
+  #tablaEventos{
+   background: #FFFF;
+
+  
   }
+ 
 </style>
 
 
@@ -55,6 +58,10 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/additional-methods.min.js"></script>
 
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 
@@ -135,14 +142,18 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
     <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
       <li class="nav-item active">
-        <a class="nav-link" href="../administrador/inicio.php">Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../administrador/analisis.php">Analisis <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Estadisticas <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Gestión de usuarios
+         Usuarios
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" data-toggle="modal" data-target="#myModalCrearUsuario" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Nuevo usuario</a>
+          <a class="dropdown-item"   href="../administrador/usuarios.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Lista Usuarios</a>
            <!--Agregar otra opción de ser necesario-->
         </div>
       </li>
@@ -159,7 +170,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 
-	<div class="display">
+	<div class="display" id="display"> <!--Se introduce la tabla -->
 
 
 	
@@ -210,7 +221,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
     <!-- Copyright -->
     <div id="copyright" class="footer-copyright text-center py-3">
       <!-- LOGO <img src="../resources/logo.png" class="rounded"> Para poner logo --> 
-      <span>© Copyright 2019 | Hospital Penco Lirquen.</span>  
+      <span>© Copyright 2019 | Hospital Penco Lirquén.</span>  
       
     </div>
     <!-- Copyright -->

@@ -10,7 +10,9 @@ if(isset($_POST))
     $nombre = mysqli_real_escape_string($link, $_POST["nombre"]);//nombre
     $apellido = mysqli_real_escape_string($link, $_POST["apellido"]);//apellido
     $rut = mysqli_real_escape_string($link, $_POST["rut"]); //rut
-    $password = mysqli_real_escape_string($link, $_POST["password"]); //password
+    $form_pass =mysqli_real_escape_string($link, $_POST["password"]); //password
+    $hash = password_hash($form_pass, PASSWORD_BCRYPT);
+
     $tipo_usuario = mysqli_real_escape_string($link, $_POST["tipo_usuario"]); //tipo_usurio
     $unidad = mysqli_real_escape_string($link, $_POST["unidad"]); //areas_id_area
    
@@ -20,7 +22,7 @@ if(isset($_POST))
     //inserta datos
     $query = "INSERT INTO usuarios(nombre, apellido, rut, password, tipo_usuario, areas_id_area)
 
-    VALUES('$nombre', '$apellido', '$rut', '$password', '$tipo_usuario', '$unidad')"; 
+    VALUES('$nombre', '$apellido', '$rut', '$hash', '$tipo_usuario', '$unidad')"; 
 
 //La instrucción INSERT INTO se usa para agregar nuevos registros a una tabla MySQL:
 //INSERT INTO table_name (column1, column2, column3,...)

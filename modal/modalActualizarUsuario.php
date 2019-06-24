@@ -1,6 +1,5 @@
 
-
-  <style type="text/css">
+<style type="text/css">
   .error {
   color: red;
 }
@@ -10,57 +9,40 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estilos.css">
 </head>
-<div class="modal fade" id="myModalCrearUsuario">
+<div class="modal fade" id="myModalActualizarUsuario">
     <div class="modal-dialog modal-lg" style="width: 600px;">
       <div class="modal-content">
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Ingresar nuevo usuario</h4>
+          <h4 class="modal-title">Actualizar usuario</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
-          <form id="formCrearUsuario" name="formCrearUsuario" method="post">
+          <form id="formActualizarUsuario" name="formActualizarUsuario" method="post">
 
 
 
           <!-- Formulario -->
           <div>
 
-          <div class="formulario">
-    <label class="control-label col-sm-2" for="nombre">Nombre:</label>
-    <div class="col-sm-12">
-      <input name="nombre" class="form-control" id="nombre" placeholder="Ingrese nombre">
-    </div>
-  </div>
-  <div class="formulario">
-    <label class="control-label col-sm-2" for="apellido">Apellido:</label>
-    <div class="col-sm-12">
-      <input name="apellido" class="form-control" id="apellido" placeholder="Ingrese apellido">
-    </div>
-  </div>
-  <div class="formulario">
-    <label class="control-label col-sm-2" for="rut">Rut:</label>
-    <div class="col-sm-12">
-      <input name="rut" class="form-control" id="rut" placeholder="Ingrese rut">
-    </div>
-  </div>
+       
 
-  <div class="formulario">
+ <!-- <div class="formulario">
     <label class="control-label col-sm-2" for="password">Contraseña:</label>
     <div class="col-sm-12">
-      <input type="password" name= "password" class="form-control" id="password" placeholder="Ingrese contraseña">
+      <input type="password" name= "a_password" class="form-control" id="a_password" placeholder="Ingrese contraseña">
     </div>
-  </div>
+  </div> -->
 
-  <div class="formulario">  <!--TIPO USUARIO -->
+  <div class="formulario">  
                            
                            
                            <label class="control-label col-sm-2">Usuario:</label>
                            <div class="form-group col-sm-12">
-                               <select name="tipo_usuario" class="form-control">
+                               <select name="a_tipo_usuario" id="a_tipo_usuario" class="form-control">
                                 
                                    <option value="Jefatura">Jefatura </option>
                                    <option value="Administrador">Administrador </option>
@@ -77,7 +59,7 @@
                                
                                 <label class="control-label col-sm-2">Unidad:</label>
                                 <div class="form-group col-sm-12">
-                                    <select name="unidad" class="form-control">
+                                    <select name="a_unidad" id="a_unidad" class="form-control">
 
                                         <option value="1">Salud mental</option>
                                         <option value="2">Cuidados paleativos</option>
@@ -122,9 +104,9 @@
 
           </form>
             <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" onclick="ingresarInformeUsuario()" >Aceptar</button>
+            <button type="submit" class="btn btn-primary" onclick="actualizarUsuario()" >Aceptar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
-            
+            <input type="hidden" id="id_usuario_oculto_id_usuario">
             </div> 
            
         </div>

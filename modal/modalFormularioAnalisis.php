@@ -14,7 +14,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Formulario de Analisis</h4>
+          <h4 class="modal-title"> Complete Formulario de Analisis</h4>
           <button type="button" class="close" data-dismiss="modal" onclick="limpiarsubirformulario()">&times;</button>
         </div>
         
@@ -32,47 +32,19 @@
           <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
                 <div class="form-group col-sm-12">
                     
-                    <h2> Fecha de ocurrencia de evento:</h2>
-                    <input disabled type="date" name="analisis_fecha" class="form-control" id="analisis_fecha">
+                    <h5> Fecha de ocurrencia de evento:</h5>
+                    <input disabled type="date" name="fecha_analisis" id= "fecha_analisis" class="form-control">
                 </div>  
              
             </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
 
-            <div class="formulario">  <!--SELECT LUGAR DE OCURRENCIA -->
-                           
-                                <div class="form-group col-sm-12">
-                                    <h2>Unidad o lugar de ocurrencia:</h2>
-                                    <select disabled name="analisis_unidad" class="form-control" id="analisis_unidad">
+           
 
-                                        <option value="1">Salud mental</option>
-                                        <option value="2">Cuidados paleativos</option>
-                                        <option value="3">Especialidades odontológicas</option>
-                                        <option value="4">PRAIS</option>
-                                        <option value="5">Medicina fÍsica</option>
-                                        <option value="6">Farmacia</option>
-                                        <option value="7">Imagenología</option>
-                                        <option value="8">Esterilización</option>
-                                        <option value="9">Laboratorio</option>
-                                        <option value="10">Nutrición</option>
-                                        <option value="11">Endoscopia</option>
-                                        <option value="12">Especialidades médico quirúrgico</option>
-                                        <option value="13">Pabellón</option>
-                                        <option value="14">Hospitalización pisquiátria</option>
-                                        <option value="15">Hospital de día</option>
-                                        <option value="16">Ginecología</option>
-                                        <option value="17">Médico quirúrgico adulto</option>
-                                        <option value="18">Médico quirúrgico infantil</option>
-                                        <option value="19">Urgencia</option>
-                                        <option value="20">Equipos médicos</option>
-                                    </select>
-                                </div>
-            </div>  <!-- FIN SELECT LUGAR DE OCURRENCIA -->
-
-            <div class="formulario"> <!--SELECT TIPO DE EVENTO ADVERSO -->
+       <div class="formulario"> <!--SELECT TIPO DE EVENTO ADVERSO -->
                                 <div class="form-group col-sm-12">
 
-                                    <h2> Tipo de evento que se reporta</h2>
-                                     <select disabled name="analisis_evento" class="form-control" id="analisis_evento">
+                                    <h5> Nombre de evento</h5>
+                                     <select disabled name="evento_analisis" id= "evento_analisis" class="form-control">
 
                                     <optgroup label="Atención obstetrica">
                                         <option value="Muerte fetal tardía">Muerte fetal tardía</option>
@@ -158,12 +130,13 @@
 
                             </div>  <!-- FIN SELECT TIPO DE EVENTO ADVERSO -->
 
+          
            
 
                         <div class="formulario"> 
                         <div class="form-group col-sm-12">
-                           <h2>Causas detectadas (Máx 100 caracteres):</h2>
-                           <textarea cols="50" rows="5" name="Causas" id= "causas" maxlength="100"></textarea>
+                           <h5>Causas detectadas (Máx 250 caracteres):</h5>
+                           <textarea cols="50" rows="5" name="causas" id= "causas" maxlength="250"></textarea>
                                                
 
                         </div> 
@@ -172,8 +145,8 @@
 
                     <div class="formulario"> 
                         <div class="form-group col-sm-12">
-                           <h2>Propuestas de mejora (Máx 100 caracteres):</h2>
-                           <textarea cols="50" rows="5" name="Propuestas" id="propuestas" maxlength="100"></textarea>
+                           <h5>Propuestas de mejora (Máx 250 caracteres):</h5>
+                           <textarea cols="50" rows="5" name="propuestas" id="propuestas" maxlength="250"></textarea>
                                                
 
                         </div> 
@@ -199,7 +172,8 @@
             <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="ingresarAnalisis()" >Aceptar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
-          
+            
+         
             </div> 
            
         </div>
