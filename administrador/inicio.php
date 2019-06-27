@@ -23,6 +23,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <head>
 
 
+
 <style type="text/css"> /* ESTILOS PARA ADMIN css*/
   nav{
     margin-bottom: 8px;
@@ -50,19 +51,19 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!-- Librería nueva para probar actualización de pagina -->
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/additional-methods.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/additional-methods.min.js"></script> 
+
 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 
 
 
@@ -83,20 +84,11 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-
-
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
 <!--AGREGUÉ ESTO PARA Librito-->
@@ -127,16 +119,17 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 </head>
+
+
 	<body>
 	
-
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Inicio nav -->
   <a class="navbar-brand" href="#">Eventos reportados</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
   <!-- https://getbootstrap.com/docs/4.0/components/navbar/-->
   <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
@@ -159,6 +152,8 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
       </li>
     </ul>
   </div>
+  
+
   <div>
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -166,14 +161,14 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
       </li>
     </ul>
   </div>
-</nav>
+
+ 
+</nav>  <!-- FIN nav -->
 
 
 
 	<div class="display" id="display"> <!--Se introduce la tabla -->
 
-
-	
 	</div>
 	
 

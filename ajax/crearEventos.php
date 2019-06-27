@@ -19,7 +19,7 @@ if(isset($_POST))
     $estado="";
     $nombre = mysqli_real_escape_string($link, $_POST["nombre"]);//nombre
     $apellidos = mysqli_real_escape_string($link, $_POST["apellidos"]);//apellidos
-    $rut = mysqli_real_escape_string($link, $_POST["rut"]);//rut
+    $rut_paciente = mysqli_real_escape_string($link, $_POST["rut_paciente"]);//rut
     $fecha = mysqli_real_escape_string($link, $_POST["fecha"]);//fecha_creacion
     $unidad = mysqli_real_escape_string($link, $_POST["unidad"]);//areas_id_area 
     $evento = mysqli_real_escape_string($link, $_POST["evento"]); //nombre_evento
@@ -96,10 +96,10 @@ if(isset($_POST))
 
   
     //inserta datos
-    $query = "INSERT INTO eventos(nombre, apellidos, rut, fecha_creacion, areas_id_area, nombre_evento, dano, gravedad, notificacion_paciente, notificacion_familiares, notificacion_acompanantes,
+    $query = "INSERT INTO eventos(nombre, apellidos, rut_paciente, fecha_creacion, areas_id_area, nombre_evento, dano, gravedad, notificacion_paciente, notificacion_familiares, notificacion_acompanantes,
      notificacion_no_informa, comentario, tipo, estado)
 
-    VALUES('$nombre', '$apellidos','$rut', '$fecha', '$unidad', '$evento', '$dano_paciente', '$tipo_dano', '$paciente', '$familia', '$acompanante', '$no_informa', '$comentario', '$tipo_evento', '$estado')"; 
+    VALUES('$nombre', '$apellidos','$rut_paciente', '$fecha', '$unidad', '$evento', '$dano_paciente', '$tipo_dano', '$paciente', '$familia', '$acompanante', '$no_informa', '$comentario', '$tipo_evento', '$estado')"; 
 
 //La instrucción INSERT INTO se usa para agregar nuevos registros a una tabla MySQL:
 //INSERT INTO table_name (column1, column2, column3,...)

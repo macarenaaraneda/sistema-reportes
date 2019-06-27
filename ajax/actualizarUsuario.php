@@ -30,6 +30,6 @@ if(isset($_POST))
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));
     }
-    echo "Evento actualizado correctamente.";
+    echo "Usuario actualizado correctamente.";
 
 }

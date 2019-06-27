@@ -174,7 +174,7 @@ if (!$result = mysqli_query($link, $query)) {
                   
                                          
                   <td>'.$row['nombre'].' '.$row['apellidos'].'</td> 
-                  <td>'.$row['rut'].'</td>
+                  <td>'.$row['rut_paciente'].'</td>
                   <td>'.$row['tipo'].'</td>
                   <td>'.$row['areas_id_area'].'</td>
                   <td> '.$fecha_chilena.'</td>

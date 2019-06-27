@@ -205,7 +205,7 @@ function ingresarInforme(){
       //recuperamos datos del usuario y ponemos en modal
       $("#a_nombre").val(evento.nombre);
       $("#a_apellidos").val(evento.apellidos);
-      $("#a_rut").val(evento.rut);
+      $("#a_rut").val(evento.rut_paciente);
       $("#a_fecha").val(evento.fecha_creacion);
       $("#a_unidad").val(evento.areas_id_area);
       $("#a_evento").val(evento.nombre_evento);
@@ -273,37 +273,7 @@ function ingresarInforme(){
     //alert(fecha);
   }
   
-  //funcion para update pacientes
-  function actualizarEventos() {
-      // get values
-     // var dano = $("#actualizar_dano_paciente").val();
-      
-     var tipo = $("#actualizar_tipo_evento").val();
-     //console.log(dano);
-      // get hidden field value
-      var id_evento = $("#id_evento_oculto_id_evento").val();
-     
-   
-      // Update the details by requesting to the server using ajax
-      $.post("../ajax/actualizarTipoEventos.php", {
-              id_evento: id_evento,
-             // dano:dano,
-             // gravedad:gravedad,
-             tipo:tipo,
-              
-             
-             
-          function (data, status) {
-              // hide modal popup
-              $("#myModalActualizarEventos").modal("hide");
-              // reload Users by using readRecords();
-              document.getElementById("display").innerHTML="";
-              actualizarTablaEventos();
-              alertify.success('Evento actualizado correctamente.');
-          }
-    });
-  }
-  
+
   
   
   
@@ -340,10 +310,42 @@ function ingresarInforme(){
     //$("#myModalVerEvento").modal("show");
     //alert(fecha);
   }
+
+
+  //funcion para update pacientes
+  function actualizarEventos() {
+    // get values
+  
+    
+   var tipo = $("#actualizar_tipo_evento").val();
+   //console.log(dano);
+    // get hidden field value
+    var id_evento = $("#id_evento_oculto_id_evento").val();
+   
+ 
+    // Update the details by requesting to the server using ajax
+    $.post("../ajax/actualizarTipoEventos.php", {
+            id_evento: id_evento,
+           // dano:dano,
+           // gravedad:gravedad,
+           tipo:tipo,
+            
+        function (data, status) {
+            // hide modal popup
+            $("#myModalActualizarEventos").modal("hide");
+            // reload Users by using readRecords();
+            document.getElementById("display").innerHTML="";
+            actualizarTablaEventos();
+            alertify.success('Evento actualizado correctamente.');
+        }
+  });
+}
+
+
   
   function obtenerEstadosParaActualizar(id_evento){
-    //agregamos el id del usuario para ocuparlo luego
-    $("#id_evento_oculto_id_evento").val(id_evento);
+    
+    $("#id_evento_oculto_id_estado").val(id_evento);
   
     $.post("../ajax/leerDetallesEventos.php",{
       id_evento: id_evento,
@@ -374,7 +376,7 @@ function ingresarInforme(){
    
     
     // get hidden field value
-    var id_evento = $("#id_evento_oculto_id_evento").val();
+    var id_evento = $("#id_evento_oculto_id_estado").val();
    
   
     // Update the details by requesting to the server using ajax
@@ -549,7 +551,86 @@ function ingresarInforme(){
                 document.getElementById("display").innerHTML="";
                 actualizarTablaUsuarios();
               
-                alertify.success('Usuario actualizado correctamente.');
+               
             }
       });
       }
+
+      
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+     /* (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })(); */
+
+
+     
+   
+      function limpiarForm() {
+        location.reload();
+       
+      }
+
+      
+function checkRut(rut_paciente) {
+  // Despejar Puntos
+  var valor = rut_paciente.value.replace('.','');
+  // Despejar Guión
+  valor = valor.replace('-','');
+  
+  // Aislar Cuerpo y Dígito Verificador
+  cuerpo = valor.slice(0,-1);
+  dv = valor.slice(-1).toUpperCase();
+  
+  // Formatear RUN
+  rut_paciente.value = cuerpo + '-'+ dv
+  
+  // Si no cumple con el mínimo ej. (n.nnn.nnn)
+  if(cuerpo.length < 7) { rut_paciente.setCustomValidity("RUT Incompleto"); return false;}
+  
+  // Calcular Dígito Verificador
+  suma = 0;
+  multiplo = 2;
+  
+  // Para cada dígito del Cuerpo
+  for(i=1;i<=cuerpo.length;i++) {
+  
+      // Obtener su Producto con el Múltiplo Correspondiente
+      index = multiplo * valor.charAt(cuerpo.length - i);
+      
+      // Sumar al Contador General
+      suma = suma + index;
+      
+      // Consolidar Múltiplo dentro del rango [2,7]
+      if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+
+  }
+  
+  // Calcular Dígito Verificador en base al Módulo 11
+  dvEsperado = 11 - (suma % 11);
+  
+  // Casos Especiales (0 y K)
+  dv = (dv == 'K')?10:dv;
+  dv = (dv == 0)?11:dv;
+  
+  // Validar que el Cuerpo coincide con su Dígito Verificador
+  if(dvEsperado != dv) { rut_paciente.setCustomValidity("RUT Inválido"); return false; }
+  
+  // Si todo sale bien, eliminar errores (decretar que es válido)
+  rut_paciente.setCustomValidity('');
+
+
+}

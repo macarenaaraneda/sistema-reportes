@@ -6,8 +6,8 @@
   // si el usuario es administrador muestro la tabla con todos los datos dentro del tr ( fila o celda)
    // si el usuario es admin:
    if($_SESSION['tipo_usuario'] == "Administrador"){
-      $data = '<table id="tablaEventos" class="display  table-condensed table-bordered table-hover"  style="width:100%; margin: 0 auto;">
-        <thead class=" thead-light"> <!-- puede ser dark -->
+      $data = '<table id="tablaEventos" class="display table-hover table-bordered"  style="width:100%; margin: 0 auto;">
+       <thead>
       
            
         <tr>
@@ -26,7 +26,7 @@
   // SI EL USUARIO ES JEFATURA MUESTRO LO SIGUIENTE:
    }elseif($_SESSION['tipo_usuario'] == "Jefatura"){
 
-    $data = '<table id="tablaEventos" class="display table table-hover table-bordered table-condensed"  style="width:100%; margin: 0 auto;">
+    $data = '<table id="tablaEventos" class="display table-hover table-bordered table-condensed"  style="width:100%; margin: 0 auto;">
     <thead class=" thead-light"> <!-- puede ser dark -->
       
            
@@ -74,114 +74,133 @@
                 WHERE areas_id_area= '1'
                 ORDER BY fecha_creacion DESC";
             break;
+
             case '2':
             $query = 
                 "SELECT * FROM eventos 
                 WHERE areas_id_area= '2'
                 ORDER BY fecha_creacion DESC";
              break;
+
              case '3':
              $query = 
                 "SELECT * FROM eventos 
                 WHERE areas_id_area= '3'
                 ORDER BY fecha_creacion DESC";
               break;
+
               case '4':
               $query = 
                 "SELECT * FROM eventos 
                 WHERE areas_id_area= '4'
                 ORDER BY fecha_creacion DESC";
                break;
+
                case '5':
                $query = 
                   "SELECT * FROM eventos 
                     WHERE areas_id_area= '5'
                     ORDER BY fecha_creacion DESC";
                 break;
+
                 case '6':
                 $query = 
                     "SELECT * FROM eventos 
                     WHERE areas_id_area= '6'
                     ORDER BY fecha_creacion DESC";
                  break;
+
                  case '7':
                  $query = 
                      "SELECT * FROM eventos 
                      WHERE areas_id_area= '7'
                      ORDER BY fecha_creacion DESC";
                   break;
+
                   case '8':
                   $query = 
                     "SELECT * FROM eventos 
                     WHERE areas_id_area= '8'
                     ORDER BY fecha_creacion DESC";
                    break;
+
                    case '9':
                    $query = 
                       "SELECT * FROM eventos 
                         WHERE areas_id_area= '9'
                         ORDER BY fecha_creacion DESC";
                     break;
+
                     case '10':
                     $query = 
                         "SELECT * FROM eventos 
                         WHERE areas_id_area= '10'
                         ORDER BY fecha_creacion DESC";
                      break;
+
                      case '11':
                      $query = 
                         "SELECT * FROM eventos 
                         WHERE areas_id_area= '11'
                         ORDER BY fecha_creacion DESC";
                       break;
+
                       case '12':
                       $query = 
                         "SELECT * FROM eventos 
                         WHERE areas_id_area= '12'
                         ORDER BY fecha_creacion DESC";
                        break;
+
                        case '13':
                        $query = 
                           "SELECT * FROM eventos 
                             WHERE areas_id_area= '13'
                             ORDER BY fecha_creacion DESC";
                         break;
+
                         case '14':
                         $query = 
                             "SELECT * FROM eventos 
                             WHERE areas_id_area= '14'
                             ORDER BY fecha_creacion DESC";
                          break;
+
                          case '15':
                          $query = 
                             "SELECT * FROM eventos 
                             WHERE areas_id_area= '15'
                             ORDER BY fecha_creacion DESC";
                           break;
+
                           case '16':
                           $query = 
                             "SELECT * FROM eventos 
                             WHERE areas_id_area= '16'
                             ORDER BY fecha_creacion DESC";
                            break;
+
                            case '17':
                            $query = 
                              "SELECT * FROM eventos 
                                 WHERE areas_id_area= '17'
                                 ORDER BY fecha_creacion DESC";
                             break;
+
                             case '18':
                             $query = 
                                 "SELECT * FROM eventos 
                                 WHERE areas_id_area= '18'
                                 ORDER BY fecha_creacion DESC";
                              break;
+
                              case '19':
                              $query = 
                                 "SELECT * FROM eventos 
                                 WHERE areas_id_area= '19'
                                 ORDER BY fecha_creacion DESC";
                               break;
+                              
                               case '20':
                               $query = 
                                 "SELECT * FROM eventos 
@@ -358,7 +377,7 @@
                                                    
                         
                             <td>'.$row['nombre'].' '.$row['apellidos'].'</td> 
-                            <td>'.$row['rut'].'</td>
+                            <td>'.$row['rut_paciente'].'</td>
                             <td>'.$row['tipo'].'</td>
                             <td>'.$row['areas_id_area'].'</td>
                             <td> '.$fecha_chilena.'</td>
@@ -368,6 +387,7 @@
                             <button  type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalVerEvento" data-backdrop="static" data-keyboard="false" onclick="obtenerDetallesEventos('.$row['id_evento'].')">
                             <span title="Detalles Reportes"><i class="fas fa-book-open"></i></span></button>
                             
+
                             <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalVerFormularioAnalisis" data-backdrop="static" data-keyboard="false" onclick="obtenerInformes('.$row['id_evento'].')">
                             <span title="Ver Análisis"><i class="fas fa-check"></i></span></button>
                             
@@ -376,10 +396,7 @@
 
                             <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalActualizarEstado" data-backdrop="static" data-keyboard="false" onclick="obtenerEstadosParaActualizar('.$row['id_evento'].')">
                             <span title="Estado análisis"><i class="fas fa-bell"></i></span></button>
-                            
-
-                            
-
+                                                  
                             </td>
                         </tr>';
                     break;
@@ -392,7 +409,7 @@
                                                    
                     <td>'.$row['nombre'].'</td>
                     <td>'.$row['apellidos'].'</td>
-                    <td>'.$row['rut'].'</td>
+                    <td>'.$row['rut_paciente'].'</td>
                     <td>'.$row['tipo'].'</td> 
                     <td>'.$row['areas_id_area'].'</td>
                     <td> '.$fecha_chilena.'</td>
@@ -400,15 +417,15 @@
                     <td id="botonesTabla">
                       <!--COLOCAR MYMODAL CORRECTO EN CADA BOTON -->
                       <button  type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalVerEvento" data-backdrop="static" data-keyboard="false" onclick="obtenerDetallesEventos('.$row['id_evento'].')">
-                      <span><i class="fas fa-book-open"></i></span></button>
+                      <span title="Detalles Reportes" ><i class="fas fa-book-open"></i></span></button>
                       
 
                             <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioAnalisis" data-backdrop="static" data-keyboard="false" onclick="DatosOcultosInformeAnalisis('.$row['id_evento'].')">
-                            <span><i class="fas fa-edit"></i></span></button>
+                            <span title="Completar Análisis" ><i class="fas fa-edit"></i></span></button>
 
                             
                             <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalVerFormularioAnalisis" data-backdrop="static" data-keyboard="false" onclick="obtenerInformes('.$row['id_evento'].')">
-                            <span><i class="fas fa-check"></i></span></button>
+                            <span title="Ver análisis"><i class="fas fa-check"></i></span></button>
                             
                            
                     </td>            

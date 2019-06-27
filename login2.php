@@ -180,7 +180,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';?>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
+    
 <!--===============================================================================================-->  
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->

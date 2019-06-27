@@ -8,7 +8,7 @@
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css">
+
 </head>
 <div class="modal fade" id="myModalCrearUsuario">
     <div class="modal-dialog modal-lg" style="width: 600px;">

@@ -3,105 +3,112 @@
   color: red;
 }
 </style>
-
-
-
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estilos.css">
+
 </head>
+
 <div class="modal fade" id="myModalFormularioReportes">
     <div class="modal-dialog modal-lg" style="width: 600px;">
       <div class="modal-content">
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Formulario de Eventos Adversos</h4>
-          <button type="button" class="close" data-dismiss="modal" >&times;</button>
+          <h4 class="modal-title">Prueba validar formularios</h4>
+          <button type="button" class="close" data-dismiss="modal" onclick="limpiarForm()" >&times;</button>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
-          <form id="formFormularioReportes" name="formFormularioReportes" method="post">
-
-
-
+          <form  class="needs-validation" novalidate id="formFormularioReportes" name="formFormularioReportes" method="post">
+         
           <!-- Formulario -->
           <div>
-          <div class="formulario">
-          <div class="form-group col-sm-12">
-                    
-           <h2>Nombre paciente:</h2>
-      <input name="nombre" class="form-control" id="nombre">
-         </div>
-         </div>
-  <div class="formulario">
-  <div class="form-group col-sm-12">              
-        <h2>Apellidos:</h2>
-      <input name="apellidos" class="form-control" id="apellidos">
-    </div>
-  </div>
-  <div class="formulario">
-  <div class="form-group col-sm-12">
-                    
-    <h2>Rut:</h2>
-      <input name="rut" class="form-control" id="rut">
-    </div>
-  </div>
 
+     <div class="formulario">
+    <div class="col-sm-12">
+      <h2>Nombre paciente:</h2>
+      <input type="text" class="form-control" name= "nombre" id="nombre" placeholder="Ingrese nombre de paciente" required>
+      <div class="valid-feedback">
+        Muy bien!
+      </div>
+    </div>  
+    </div> 
 
-            <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
+    <div class="formulario">
+    <div class="col-sm-12">
+      <h2>Apellidos:</h2>
+      <input type="text" class="form-control" name= "apellidos" id="apellidos" placeholder="Ingrese apellidos de paciente" required>
+      <div class="valid-feedback">
+        Muy bien!
+      </div>
+    </div>  
+    </div> 
+
+    <div class="formulario">
+    <div class="col-sm-12">
+      <h2>Rut:</h2>
+      <input type="text" class="form-control" name= "rut_paciente" id="rut_paciente"  oninput="checkRut(this)" placeholder="Ingrese rut del paciente" required>
+      
+    </div>  
+    </div> 
+
+    <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
                 <div class="form-group col-sm-12">
                     
                     <h2> Fecha de ocurrencia de evento:</h2>
-                    <input type="date" name="fecha" id= "fecha" class="form-control">
-                   
+                    <input type="date" name="fecha" id= "fecha" class="form-control" required>
+                    <div class="valid-feedback">Selección válida</div>
                 </div>  
              
             </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
 
-            <div class="formulario">  <!--SELECT LUGAR DE OCURRENCIA -->
-                           
-                                <div class="form-group col-sm-12">
-                                    <h2>Unidad o lugar de ocurrencia:</h2>
-                                    <select name="unidad" id= "unidad" class="form-control" >
-                                        <option selected >
-                                        <option value="1">Salud mental</option>
-                                        <option value="2">Cuidados paleativos</option>
-                                        <option value="3">Especialidades odontológicas</option>
-                                        <option value="4">PRAIS</option>
-                                        <option value="5">Medicina fÍsica</option>
-                                        <option value="6">Farmacia</option>
-                                        <option value="7">Imagenología</option>
-                                        <option value="8">Esterilización</option>
-                                        <option value="9">Laboratorio</option>
-                                        <option value="10">Nutrición</option>
-                                        <option value="11">Endoscopia</option>
-                                        <option value="12">Especialidades médico quirúrgico</option>
-                                        <option value="13">Pabellón</option>
-                                        <option value="14">Hospitalización pisquiátria</option>
-                                        <option value="15">Hospital de día</option>
-                                        <option value="16">Ginecología</option>
-                                        <option value="17">Médico quirúrgico adulto</option>
-                                        <option value="18">Médico quirúrgico infantil</option>
-                                        <option value="19">Urgencia</option>
-                                        <option value="20">Equipos médicos</option>
-                                    </select>
-                                </div>
-            </div>  <!-- FIN SELECT LUGAR DE OCURRENCIA -->
+
+ 
+
+    <div class="formulario">
+    <div class="form-group col-sm-12">
+    <select class="custom-select" name="unidad" id= "unidad"  required>
+      <option value="">Seleccione una opción</option>
+      
+      <option value="1">Salud mental</option>
+                                    
+                                           <option value="2">Cuidados paleativos</option>
+                                            <option value="3">Especialidades odontológicas</option>
+                                            <option value="4">PRAIS</option>
+                                            <option value="5">Medicina fÍsica</option>
+                                            <option value="6">Farmacia</option>
+                                            <option value="7">Imagenología</option>
+                                            <option value="8">Esterilización</option>
+                                            <option value="9">Laboratorio</option>
+                                            <option value="10">Nutrición</option>
+                                            <option value="11">Endoscopia</option>
+                                            <option value="12">Especialidades médico quirúrgico</option>
+                                            <option value="13">Pabellón</option>
+                                            <option value="14">Hospitalización pisquiátria</option>
+                                            <option value="15">Hospital de día</option>
+                                            <option value="16">Ginecología</option>
+                                            <option value="17">Médico quirúrgico adulto</option>
+                                            <option value="18">Médico quirúrgico infantil</option>
+                                            <option value="19">Urgencia</option>
+                                            <option value="20">Equipos médicos</option>
 
 
+    </select>
+    <div class="valid-feedback">Selección válida</div>
+  </div>
+  </div>
 
-<!-- EVENTOS ADVERSOS -->
-
-                            <div class="formulario"> <!--SELECT TIPO DE EVENTO ADVERSO -->
-                                <div class="form-group col-sm-12">
-
-                                    <h2> Tipo de evento que se reporta</h2>
-                                     <select name="evento" id= "evento" class="form-control">
-                                    <option selected >
-                                    <optgroup label="Atención obstetrica">
+              
+              
+    <div class="formulario">
+    <div class="form-group col-sm-12">
+    <select class="custom-select" name="evento" id= "evento"  required>
+      <option value="">Seleccione una opción</option>
+      
+      <optgroup label="Atención obstetrica">
                                         <option value="Muerte fetal tardía">Muerte fetal tardía</option>
                                         <option value="Muerte materna">Muerte materna</option>
                                         <option value="Asfixia neonatal">Asfixia neonatal</option>
@@ -176,16 +183,13 @@
                                         <option value="Error de registro en ficha clínica"> Error de registro en Ficha Clínica</option>
                                         <option value="Entrega de material estéril con error de proceso"> Entrega de material estéril con error de proceso</option>
                                     </optgroup>
+    </select>
+    <div class="valid-feedback">Selección válida</div>
+  </div>
+  </div>
+                
 
-                                </select>
-
-                                </div>
-
-                               
-
-                            </div>  <!-- FIN SELECT TIPO DE EVENTO ADVERSO -->
-
-                            <div class="formulario"> <!--CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
+ <div class="formulario"> <!--CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
                                 
                             <div class="form-group col-sm-12">
                             <div class="checkbox">
@@ -199,22 +203,24 @@
                                 </div>
                             </div> <!-- FIN CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
 
-                               <div class="formulario"> <!--SELECT GRAVEDAD DEL DAÑO -->
+                            
+                            <div class="formulario"> <!--SELECT GRAVEDAD DEL DAÑO -->
                            
-                                <div class="form-group col-sm-12">
-                                    <h2>Gravedad del daño:</h2>
-                                    <select name="tipo_dano" id= "tipo_dano" class="form-control">
-                                        
+                           <div class="form-group col-sm-12">
+                               <h2>Gravedad del daño:</h2>
+                               <select name="tipo_dano" id= "tipo_dano" class="form-control" required>
+                                   
+                                  <option value="">Seleccione una opción</option>
+                                   <option value="Leve">Leve</option>
+                                   <option value="Moderado">Moderado</option>
+                                   <option value="Grave">Grave</option>
+                                   
+                               </select>
+                               <div class="valid-feedback">Selección válida</div>
+                           </div>
+                       </div> <!-- FIN SELECT GRAVEDAD DEL DAÑO -->
 
-                                        <option value="Leve">Leve</option>
-                                        <option value="Moderado">Moderado</option>
-                                        <option value="Grave">Grave</option>
-                                        
-                                    </select>
-                                </div>
-                            </div> <!-- FIN SELECT GRAVEDAD DEL DAÑO -->
-
-               <div class="formulario"> <!--CHECKBOX DE SE INFORMA A -->
+                       <div class="formulario"> <!--CHECKBOX DE SE INFORMA A -->
                <div class="form-group col-sm-12">
                <div class="checkbox">
                                
@@ -239,7 +245,8 @@
 
                             </div> <!-- FIN CHECKBOX DE SE INFORMA A -->
 
-                  <div class="formulario"> 
+
+                            <div class="formulario"> 
                         <div class="form-group col-sm-12">
                            <h2>Breve descripción del evento (Máx 250 caracteres):</h2>
                            <textarea cols="50" rows="5" name="comentario" maxlength="250"></textarea>
@@ -248,22 +255,22 @@
                         </div> 
            
                     </div> 
-                
+
+
                  
-                     </div>  
+                 </div>  
+                    
 
+            <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"  >Aceptar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="location.reload()" >Cancelar</button>
+            <input type="hidden" id="id_evento_oculto_id_evento">
+            </div> 
 
-               
 
           </form>
            
            
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" onclick="ingresarInforme()" >Aceptar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
-             </div>  
-            
-
         </div>
         
         
@@ -273,3 +280,33 @@
   </div>
 
 </div>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }else{
+          ingresarInforme();
+        }
+        form.classList.add('was-validated');
+       //  
+      
+      }, false);
+    });
+  }, false);
+})();  
+
+
+
+ </script>
+

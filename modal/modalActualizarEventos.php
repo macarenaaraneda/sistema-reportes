@@ -6,7 +6,7 @@
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css">
+
 </head>
 <div class="modal fade" id="myModalActualizarEventos">
     <div class="modal-dialog modal-lg" style="width: 600px;">
@@ -15,7 +15,7 @@
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Actualizar tipo evento</h4>
-          <button type="button" class="close" data-dismiss="modal" onclick="limpiarsubirformulario()">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" >&times;</button>
         </div>
         
         <!-- Modal body -->
@@ -92,13 +92,14 @@
                  
                      </div>  
                     
-
-          </form>
-            <div class="modal-footer">
+                     <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="actualizarEventos()" >Aceptar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancelar</button>
             <input type="hidden" id="id_evento_oculto_id_evento">
             </div> 
+
+          </form>
+         
            
         </div>
         
