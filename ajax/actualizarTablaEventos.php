@@ -389,14 +389,19 @@
                             
 
                             <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalVerFormularioAnalisis" data-backdrop="static" data-keyboard="false" onclick="obtenerInformes('.$row['id_evento'].')">
-                            <span title="Ver Análisis"><i class="fas fa-check"></i></span></button>
+                            <span title="Ver Análisis"><i class="fas fa-eye"></i></span></button>
                             
                             <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalActualizarEventos" data-backdrop="static" data-keyboard="false" onclick="obtenerDetallesEventosParaActualizar('.$row['id_evento'].')">
                             <span title="Tipo evento" ><i class="fas fa-edit"></i></span></button>
 
                             <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalActualizarEstado" data-backdrop="static" data-keyboard="false" onclick="obtenerEstadosParaActualizar('.$row['id_evento'].')">
-                            <span title="Estado análisis"><i class="fas fa-bell"></i></span></button>
-                                                  
+                            <span title="Estado análisis"><i class="fas fa-check"></i></span></button>
+                              
+                            <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalFormularioAnalisisCentinela" data-backdrop="static" data-keyboard="false" onclick=" DatosOcultosInformeAnalisisCentinela('.$row['id_evento'].')">
+                            <span title="Informe Centinela"><i class="fas fa-archive"></i></span></button>
+                              
+                            
+
                             </td>
                         </tr>';
                     break;

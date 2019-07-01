@@ -15,6 +15,10 @@ function ingresarInforme(){
     });
   
   }
+
+
+ 
+    
   
   
   
@@ -61,6 +65,33 @@ function ingresarInforme(){
   }
 
 
+ 
+
+
+
+
+  function  actualizarTablaCentinela(){
+    $.get("../ajax/actualizarTablaCentinela.php", {}, function(data, status){
+      $(".display").html(data);//leer datos ya lo tenemos con php
+     var table = $('#tablaInformesCentinela').DataTable( {
+           ordering: false,
+          stateSave: true,
+          "language": {
+                  "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+              },
+              dom: 'Bfrtip',
+              buttons:[
+                'excel',
+                {
+                  extend: 'pdfHtml5',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+  
+                }
+              ]
+      });   
+    });
+  }
 
 
   function actualizarTablaAnalisis(){
@@ -579,11 +610,6 @@ function ingresarInforme(){
 
      
    
-      function limpiarForm() {
-        location.reload();
-       
-      }
-
       
 function checkRut(rut_paciente) {
   // Despejar Puntos
@@ -634,3 +660,149 @@ function checkRut(rut_paciente) {
 
 
 }
+
+
+function ingresarAnalisisCentinela(){
+  
+  var id_evento = $("#id_evento_oculto_id_evento").val();
+  var id_areas_id_area = $("#eventos_areas_id_area").val();
+
+  var causales = $("#causales").val();
+  var condiciones = $("#condiciones").val();
+  var efectos = $("#efectos").val();
+  var medidas = $("#medidas").val();
+  
+  $.post("../ajax/crearAnalisisCentinela.php", {
+    id_evento: id_evento,
+    id_areas_id_area: id_areas_id_area,
+    causales:causales,
+    condiciones:condiciones,
+    efectos:efectos,
+    medidas:medidas,
+    
+  }, function(data, status){
+    $("#myModalFormularioAnalisisCentinela").modal("hide");
+        document.getElementById("formFormularioAnalisisCentinela").reset();
+        
+        //notificación
+      alertify.success('Analisis ingresado correctamente.');
+} );
+
+
+  
+  
+  }
+
+
+  function DatosOcultosInformeAnalisisCentinela(id_evento){
+    //
+    $("#id_evento_oculto_id_evento").val(id_evento);
+   
+    
+  
+    $.post("../ajax/leerDetallesEventos.php",{
+      id_evento: id_evento,
+    
+    },
+   function (data, status){
+      //parse datos json
+      var evento = JSON.parse(data);
+      //recuperamos datos del evento
+      
+     //$("#eventos_areas_id_area").val(evento.areas_id_area);  
+     $("#fecha_analisisC").val(evento.fecha_creacion);  
+     $("#evento_analisisC").val(evento.nombre_evento);   
+     $("#eventos_areas_id_area").val(evento.areas_id_area);
+    
+  
+      
+    }); 
+    //mostramos modal
+    //$("#myModalVerEvento").modal("show");
+    //alert(fecha);
+  }
+
+  function obtenerDetallesEventosAnalisisCentinela(id_evento){
+    //agregamos el id del usuario para ocuparlo luego
+    $("#id_evento_oculto_id_evento").val(id_evento);
+  
+    $.post("../ajax/leerAnalisisCentinela.php",{
+      id_evento: id_evento,
+    
+    },
+   function (data, status){
+      //parse datos json
+      var evento = JSON.parse(data);
+      //recuperamos datos del usuario y ponemos en modal
+      $("#ac_nombre").val(evento.nombre);
+      $("#ac_apellidos").val(evento.apellidos);
+      $("#ac_rut").val(evento.rut_paciente);
+      $("#ac_fecha").val(evento.fecha_creacion);
+      $("#ac_unidad").val(evento.areas_id_area);
+      $("#ac_evento").val(evento.nombre_evento);
+      $("#ac_dano_paciente").val(evento.dano);
+      $("#ac_tipo_dano").val(evento.gravedad);
+      $("#ac_paciente").val(evento.notificacion_paciente);
+      $("#ac_familia").val(evento.notificacion_familiares);
+      $("#ac_acompanante").val(evento.notificacion_acompanantes);
+      $("#ac_no_informa").val(evento.notificacion_no_informa);
+      $("#ac_comentario").val(evento.comentario);
+    
+     var check_pacienteC =  document.getElementById("ac_paciente");
+     var check_familiaC =  document.getElementById("ac_familia");
+     var check_acompananteC =  document.getElementById("ac_acompanante");
+     var check_no_informaC =  document.getElementById("ac_no_informa");
+
+     var check_danoC =  document.getElementById("ac_dano_paciente");
+     if(evento.dano == 'Verdadero'){
+      document.getElementById("ac_dano_paciente").checked=true;
+     }
+     if(evento.dano =='Falso'){
+      document.getElementById("ac_dano_paciente").checked=false;
+     }
+      /* */
+     var check_pacienteC =  document.getElementById("ac_paciente");
+     if(evento.notificacion_paciente == 'Verdadero'){
+      document.getElementById("ac_paciente").checked=true;
+     
+     }
+     if(evento.notificacion_paciente =='Falso'){
+      document.getElementById("ac_paciente").checked=false;
+     }
+    /* */
+     var check_familiaC =  document.getElementById("ac_familia");
+     if(evento.notificacion_familiares == 'Verdadero'){
+      document.getElementById("ac_familia").checked=true;
+     
+     }
+     if(evento.notificacion_familiares =='Falso'){
+      document.getElementById("ac_familia").checked=false;
+     }
+       /* */
+     var check_acompananteC =  document.getElementById("ac_acompanante");
+     if(evento.notificacion_acompanantes == 'Verdadero'){
+      document.getElementById("ac_acompanante").checked=true;
+   
+     }
+     if(evento.notificacion_acompanantes =='Falso'){
+      document.getElementById("ac_acompanante").checked=false;
+     }
+  
+      /* */
+     var check_no_informaC =  document.getElementById("ac_no_informa");
+     if(evento.notificacion_no_informa == 'Verdadero'){
+      document.getElementById("ac_no_informa").checked=true;
+     
+     }
+     if(evento.notificacion_no_informa =='Falso'){
+      document.getElementById("ac_no_informa").checked=false;
+     }
+  
+     
+   
+    }); 
+    //mostramos modal
+    //$("#myModalVerEvento").modal("show");
+    //alert(fecha);
+  }
+  

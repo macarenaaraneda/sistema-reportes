@@ -112,7 +112,7 @@ if(isset($_POST))
     echo "Evento creado correctamente.";
     
 
-    //aquí if y luego switch y todo php mailer
+    //Enviar correo 
 
 
 

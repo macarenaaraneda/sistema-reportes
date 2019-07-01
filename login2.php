@@ -2,6 +2,8 @@
 // Include config file
 require_once 'config.php';
 
+
+
 // Define variables and initialize with empty values
 $rut = $password = $tipo_usuario = $id_area_usuarios = $nombre = $apellido = $id_usuario = "";
 $rut_err = $password_err = "";
@@ -131,9 +133,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                            }
                        } else{
                            // Display an error message if password is not valid
-                           $password_err = ' La contraseña ingresada no es correcta.';
+                           $password_err = '' ;
                            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                             <strong>!Alerta!</strong> $password_err
+                             <h2>¡Contraseña Incorrecta!</h2> $password_err
                              <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                                <span aria-hidden='true'>&times;</span>
                              </button>
@@ -142,9 +144,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                    }
                } else{
                    // Display an error message if username doesn't exist
-                   $rut_err = ' Cuenta no corresponde al rut ingresado.';
-                   echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                             <strong>!Alerta!</strong> $rut_err
+                   $rut_err = '';
+                   echo "<div id='alert' class='alert alert-danger alert-dismissible fade show' role='alert'>
+                             <h2> ¡Usuario Incorrecto! </h2> $rut_err
                              <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                                <span aria-hidden='true'>&times;</span>
                              </button>
@@ -153,7 +155,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            } else{
                $error = 'Algo a ocurrido. Intentalo mas tarde.';
                echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                             <strong>!Alerta!</strong> $error
+                             <h2>¡Intentelo más tarde!</h2> $error
                              <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                                <span aria-hidden='true'>&times;</span>
                              </button>
@@ -173,6 +175,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <html lang="en">
 <head>
+
+<style type="text/css"> /* ESTILOS PARA ADMIN css*/
+  
+  .alert h2{
+    width: 100px;
+    
+    margin-left:900px;
+  }
+  
+
+  
+ 
+</style>
+
     <title>Login V6</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

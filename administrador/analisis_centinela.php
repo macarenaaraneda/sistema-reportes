@@ -3,8 +3,7 @@ session_start();
 
 
 include '../config.php'; // acceso
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalDetallesEventosAnalisis.php';
-
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalDetallesCentinela.php';
 
 
 
@@ -131,7 +130,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Análisis de eventos</a>
+  <a class="navbar-brand" href="#">Análisis de Eventos Centinelas</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -142,10 +141,11 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
       <li class="nav-item active">
         <a class="nav-link" href="../administrador/inicio.php">Inicio <span class="sr-only">(current)</span></a>
         </li>
-        
+
         <li class="nav-item active">
-        <a class="nav-link" href="../administrador/analisis_centinela.php">Analisis Centinela <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../administrador/analisis.php">Analisis EA <span class="sr-only">(current)</span></a>
         </li>
+        
 
      
     
@@ -231,6 +231,6 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <!-- FUNCIÓN DE ACTUALIZAR TABLA DE EVENTOS-->
 <script type="text/javascript">
 $(document).ready( function () {
-	actualizarTablaAnalisis();
+	actualizarTablaCentinela();
 });
 </script>
