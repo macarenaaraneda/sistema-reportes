@@ -7,7 +7,7 @@ include ("../config.php");
 if(isset($_POST)) 
 {
    
-   
+    $fechacentinela = mysqli_real_escape_string($link, $_POST["fechacentinela"]);//causas
     $causales = mysqli_real_escape_string($link, $_POST["causales"]);//causas
     $condiciones = mysqli_real_escape_string($link, $_POST["condiciones"]);//propuestas
     $efectos = mysqli_real_escape_string($link, $_POST["efectos"]);//propuestas
@@ -21,9 +21,9 @@ if(isset($_POST))
     
   
     //inserta datos
-    $query = "INSERT INTO informes_centinela( causales, condiciones, efectos, medidas,eventos_id_evento, eventos_areas_id_area)
+    $query = "INSERT INTO informes_centinela( fechacentinela, causales, condiciones, efectos, medidas,eventos_id_evento, eventos_areas_id_area)
 
-    VALUES('$causales', '$condiciones', '$efectos', '$medidas','$id_evento', '$id_areas_id_area')"; 
+    VALUES('$fechacentinela','$causales', '$condiciones', '$efectos', '$medidas','$id_evento', '$id_areas_id_area')"; 
 
 //La instrucción INSERT INTO se usa para agregar nuevos registros a una tabla MySQL:
 //INSERT INTO table_name (column1, column2, column3,...)

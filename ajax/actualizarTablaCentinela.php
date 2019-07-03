@@ -13,7 +13,8 @@ $data = '<table id="tablaInformesCentinela" class="display table-hover table-bor
 <th>Rut</th> 
 <th>Evento</th> 
 <th>Unidad</th>
-<th>Fecha</th>
+<th>Fecha evento</th>
+<th>Fecha analisis</th>
 <th>causales</th> 
 <th>medidas</th> 
 <th>Opciones</th> <!-- BOTONES -->
@@ -27,7 +28,7 @@ $data = '<table id="tablaInformesCentinela" class="display table-hover table-bor
  " SELECT *
  FROM eventos e
  INNER JOIN informes_centinela ic ON  e.id_evento= ic.eventos_id_evento 
-  ORDER BY fecha_creacion DESC";
+  ORDER BY fechacentinela DESC";
 
 // comprueba que existe una fila, VALIDACIÓN
 if (!$result = mysqli_query($link, $query)) {
@@ -164,6 +165,10 @@ if (!$result = mysqli_query($link, $query)) {
                $fecha_parseada = explode(" ", $fecha);
                $fecha_chilena = date("d-m-y", strtotime($fecha_parseada[0]));
               
+                //fecha 
+                $fecha_cen = $row['fechacentinela'];
+                $fecha_parseada_cen = explode(" ", $fecha_cen);
+                $fecha_chilena_cen = date("d-m-y", strtotime($fecha_parseada_cen[0]));
                /**/
                 //ESTADO DE ANALISIS colores
           
@@ -179,6 +184,7 @@ if (!$result = mysqli_query($link, $query)) {
                   <td>'.$row['tipo'].'</td>
                   <td>'.$row['areas_id_area'].'</td>
                   <td> '.$fecha_chilena.'</td>
+                  <td> '.$fecha_chilena_cen.'</td>
                   <td>'.$row['causales'].'</td>
                   <td>'.$row['medidas'].'</td>
                    

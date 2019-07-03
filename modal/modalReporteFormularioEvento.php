@@ -70,6 +70,7 @@
 
     <div class="formulario">
     <div class="form-group col-sm-12">
+    <h2> Unidad: </h2>
     <select class="custom-select" name="unidad" id= "unidad"  required>
       <option value="">Seleccione una opción</option>
       
@@ -105,6 +106,7 @@
               
     <div class="formulario">
     <div class="form-group col-sm-12">
+    <h2> Nombre Evento: </h2>
     <select class="custom-select" name="evento" id= "evento"  required>
       <option value="">Seleccione una opción</option>
       

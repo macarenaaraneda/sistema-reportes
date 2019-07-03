@@ -1,28 +1,53 @@
+
+
+
 <?php
 session_start();
 
 
-include '../config.php';
+include '../config.php'; // acceso
+ 
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalFormularioAnalisis.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerAnalisis.php';
 
-/* Si se reconoce rut y contraseña de administrador ingresar*/
+
 if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
-
 
 
    exit;
 }
 ?>
 
-
+<!-- $_SESSION rut recorre rut de session_star-->
 <!DOCTYPE hmtl>
 <html>
 <head>
 
-<title>Administrador</title>
+
+<style type="text/css"> /* ESTILOS PARA ADMIN css*/
+  nav{
+    margin-bottom: 8px;
+  }
+  footer{
+    background-color: #f8f9fa;;
+    margin-top: 50px;
+    height: 
+  }
+
+  #copyright{
+    color: dark;
+  }
+
+  #tablaEventos{
+   background: #FFF;
+
+  
+  }
+ 
+</style>
 
 
-<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
-<link rel="icon" type="image/x-icon" href="../favicon.ico" />
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +60,10 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/additional-methods.min.js"></script>
 
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 
@@ -72,6 +101,10 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+<!--AGREGUÉ ESTO PARA Librito-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
 
 <!--JQuery DataTables plugin-->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
@@ -92,11 +125,98 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 <script type="text/javascript" src="../js/script.js"></script>
 
+
+
+
 </head>
 	<body>
+	
+
+
+
+<nav class="navbar navbar-expand-lg navbar-primary bg-light">
+  <a class="navbar-brand" href="#">Eventos reportados</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <!-- https://getbootstrap.com/docs/4.0/components/navbar/-->
+  <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
+    <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
+     
+      
+    </ul>
+  </div>
+  <div>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="../logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
 	<div class="display">
+
+
 	
 	</div>
+	
+
+
+<!-- Footer PIE DE PÁGINA-->
+<!-- Bootstrap footer https://mdbootstrap.com/docs/jquery/navigation/footer/-->
+<footer class="page-footer font-small special-color- pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div id="copyright" class="footer-copyright text-center py-3">
+      <!-- LOGO <img src="../resources/logo.png" class="rounded"> Para poner logo --> 
+      <span>© Copyright 2019 | Hospital Penco Lirquen.</span>  
+      
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
 	
 		
 	</body>
@@ -108,11 +228,3 @@ $(document).ready( function () {
 });
 </script>
 
-<!-- FUNCIÓN DE BOTÓN-->
-<script type="text/javascript">
-$(document).ready( function () {
- ingresarInformeBoton();
-	
-});
-
-</script>

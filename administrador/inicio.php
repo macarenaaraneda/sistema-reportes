@@ -135,12 +135,35 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   <!-- https://getbootstrap.com/docs/4.0/components/navbar/-->
   <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
     <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tipo Eventos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item"   href="../administrador/inicio_incidente.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Incidentes</a>
+             <!--Agregar otra opción de ser necesario-->
+             <a class="dropdown-item"   href="../administrador/inicio_adverso.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Adverso</a>
+             <a class="dropdown-item"   href="../administrador/inicio_centinela.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Centinela</a>
+        </div>
+       
+        
+      </li>
+
+
+
       <li class="nav-item active">
         <a class="nav-link" href="../administrador/analisis.php">Analisis <span class="sr-only">(current)</span></a>
       </li>
+
+
+
+
       <li class="nav-item active">
         <a class="nav-link" href="../administrador/estadisticas.php">Estadisticas <span class="sr-only">(current)</span></a>
       </li>
+
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Usuarios
@@ -152,6 +175,8 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
         </div>
         
       </li>
+
+
     </ul>
   </div>
   

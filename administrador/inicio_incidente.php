@@ -1,19 +1,19 @@
-
-
-
 <?php
 session_start();
 
 
 include '../config.php'; // acceso
- 
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalCrearUsuario.php'; 
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalFormularioAnalisis.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEventos.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEstado.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerAnalisis.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalAnalisisCentinela.php';
+
 
 
 if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
-
+ //header("location: login.php")
 
    exit;
 }
@@ -25,22 +25,23 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <head>
 
 
+
 <style type="text/css"> /* ESTILOS PARA ADMIN css*/
   nav{
     margin-bottom: 8px;
   }
   footer{
-    background-color: #f8f9fa;;
+    background-color: #33363b;
     margin-top: 50px;
     height: 
   }
 
   #copyright{
-    color: dark;
+    color: white;
   }
 
   #tablaEventos{
-   background: #FFF;
+   background: #FFFF;
 
   
   }
@@ -52,19 +53,19 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!-- Librería nueva para probar actualización de pagina -->
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/additional-methods.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/additional-methods.min.js"></script> 
+
 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 
 
 
@@ -85,20 +86,11 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-
-
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
 <!--AGREGUÉ ESTO PARA Librito-->
@@ -127,26 +119,72 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 
-
 </head>
+
+
 	<body>
 	
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Inicio nav -->
+  <a class="navbar-brand" href="#">Incidentes</a>
 
-
-
-<nav class="navbar navbar-expand-lg navbar-primary bg-light">
-  <a class="navbar-brand" href="#">Eventos reportados</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
   <!-- https://getbootstrap.com/docs/4.0/components/navbar/-->
   <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
-    <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
-     
-      
-    </ul>
+  <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
+
+<li class="nav-item active">
+    <a class="nav-link" href="../administrador/inicio.php"> Inicio <span class="sr-only">(current)</span></a>
+  </li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Tipo Eventos
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    
+         <!--Agregar otra opción de ser necesario-->
+         <a class="dropdown-item"   href="../administrador/inicio_adverso.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Adverso</a>
+         <a class="dropdown-item"   href="../administrador/inicio_centinela.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Centinela</a>
+    </div>
+    
+  </li>
+
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Usuarios
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" data-toggle="modal" data-target="#myModalCrearUsuario" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Nuevo usuario</a>
+      <a class="dropdown-item"   href="../administrador/usuarios.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Lista Usuarios</a>
+       <!--Agregar otra opción de ser necesario-->
+    </div>
+    
+  </li>
+
+
+  <li class="nav-item active">
+    <a class="nav-link" href="../administrador/analisis.php">Analisis <span class="sr-only">(current)</span></a>
+  </li>
+
+
+
+
+  <li class="nav-item active">
+    <a class="nav-link" href="../administrador/estadisticas.php">Estadisticas <span class="sr-only">(current)</span></a>
+  </li>
+
+
+
+
+
+</ul>
   </div>
+  
+
   <div>
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -154,21 +192,21 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
       </li>
     </ul>
   </div>
-</nav>
+
+ 
+</nav>  <!-- FIN nav -->
 
 
 
-	<div class="display">
+	<div class="display" id="display"> <!--Se introduce la tabla -->
 
-
-	
 	</div>
 	
 
 
 <!-- Footer PIE DE PÁGINA-->
 <!-- Bootstrap footer https://mdbootstrap.com/docs/jquery/navigation/footer/-->
-<footer class="page-footer font-small special-color- pt-4">
+<footer class="page-footer font-small special-color-dark pt-4">
 
     <!-- Footer Elements -->
     <div class="container">
@@ -209,7 +247,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
     <!-- Copyright -->
     <div id="copyright" class="footer-copyright text-center py-3">
       <!-- LOGO <img src="../resources/logo.png" class="rounded"> Para poner logo --> 
-      <span>© Copyright 2019 | Hospital Penco Lirquen.</span>  
+      <span>© Copyright 2019 | Hospital Penco Lirquén.</span>  
       
     </div>
     <!-- Copyright -->
@@ -224,7 +262,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <!-- FUNCIÓN DE ACTUALIZAR TABLA DE EVENTOS-->
 <script type="text/javascript">
 $(document).ready( function () {
-	actualizarTablaEventos();
+	actualizarTablaEventos_incidente();
 });
 </script>
 

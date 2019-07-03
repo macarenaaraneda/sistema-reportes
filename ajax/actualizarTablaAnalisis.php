@@ -13,7 +13,8 @@ $data = '<table id="tablaInformes" class="display table-hover table-bordered  ta
 <th>Rut</th> 
 <th>Evento</th> 
 <th>Unidad</th>
-<th>Fecha</th>
+<th>Fecha evento</th>
+<th>Fecha análisis</th>
 <th>causas</th> 
 <th>propuestas</th> 
 <th>Ver Evento</th> <!-- BOTONES -->
@@ -162,6 +163,13 @@ if (!$result = mysqli_query($link, $query)) {
                $fecha = $row['fecha_creacion'];
                $fecha_parseada = explode(" ", $fecha);
                $fecha_chilena = date("d-m-y", strtotime($fecha_parseada[0]));
+
+               
+              //fecha_analisis 
+              $fecha_ana = $row['fechaanalisis'];
+              $fecha_parseada_ana = explode(" ", $fecha_ana);
+              $fecha_chilena_ana = date("d-m-y", strtotime($fecha_parseada_ana[0]));
+             
               
                /**/
                 //ESTADO DE ANALISIS colores
@@ -178,6 +186,7 @@ if (!$result = mysqli_query($link, $query)) {
                   <td>'.$row['tipo'].'</td>
                   <td>'.$row['areas_id_area'].'</td>
                   <td> '.$fecha_chilena.'</td>
+                  <td> '.$fecha_chilena_ana.'</td>
                   <td>'.$row['causas'].'</td>
                   <td>'.$row['propuestas'].'</td>
                    

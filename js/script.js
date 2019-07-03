@@ -66,6 +66,75 @@ function ingresarInforme(){
 
 
  
+  function actualizarTablaEventos_adversos(){
+    $.get("../ajax/actualizarTablaEventos_adversos.php", {}, function(data, status){
+      $(".display").html(data);//leer datos ya lo tenemos con php
+     var table = $('#tablaEventos_adversos').DataTable( {
+           ordering: false,
+          stateSave: true,
+          "language": {
+                  "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+              },
+              dom: 'Bfrtip',
+              buttons:[
+                'excel',
+                {
+                  extend: 'pdfHtml5',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+  
+                }
+              ]
+      });   
+    });
+  }
+
+
+  function actualizarTablaEventos_incidente(){
+    $.get("../ajax/actualizarTablaEventos_incidente.php", {}, function(data, status){
+      $(".display").html(data);//leer datos ya lo tenemos con php
+     var table = $('#tablaEventos_incidente').DataTable( {
+           ordering: false,
+          stateSave: true,
+          "language": {
+                  "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+              },
+              dom: 'Bfrtip',
+              buttons:[
+                'excel',
+                {
+                  extend: 'pdfHtml5',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+  
+                }
+              ]
+      });   
+    });
+  }
+
+  function actualizarTablaEventos_centinela(){
+    $.get("../ajax/actualizarTablaEventos_centinela.php", {}, function(data, status){
+      $(".display").html(data);//leer datos ya lo tenemos con php
+     var table = $('#tablaEventos_centinela').DataTable( {
+           ordering: false,
+          stateSave: true,
+          "language": {
+                  "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+              },
+              dom: 'Bfrtip',
+              buttons:[
+                'excel',
+                {
+                  extend: 'pdfHtml5',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+  
+                }
+              ]
+      });   
+    });
+  }
 
 
 
@@ -463,6 +532,7 @@ function ingresarInforme(){
     var id_evento = $("#id_evento_oculto_id_evento").val();
     var id_areas_id_area = $("#eventos_areas_id_area").val();
   
+    var fechaanalisis = $("#fechaanalisis").val();
     var causas = $("#causas").val();
     var propuestas = $("#propuestas").val();
     
@@ -471,6 +541,7 @@ function ingresarInforme(){
       id_areas_id_area: id_areas_id_area,
       causas:causas,
       propuestas:propuestas,
+      fechaanalisis:fechaanalisis,
       
     }, function(data, status){
       $("#myModalFormularioAnalisis").modal("hide");
@@ -667,6 +738,7 @@ function ingresarAnalisisCentinela(){
   var id_evento = $("#id_evento_oculto_id_evento").val();
   var id_areas_id_area = $("#eventos_areas_id_area").val();
 
+  var fechacentinela = $("#fechacentinela").val();
   var causales = $("#causales").val();
   var condiciones = $("#condiciones").val();
   var efectos = $("#efectos").val();
@@ -675,6 +747,7 @@ function ingresarAnalisisCentinela(){
   $.post("../ajax/crearAnalisisCentinela.php", {
     id_evento: id_evento,
     id_areas_id_area: id_areas_id_area,
+    fechacentinela:fechacentinela,
     causales:causales,
     condiciones:condiciones,
     efectos:efectos,
