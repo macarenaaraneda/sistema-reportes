@@ -223,6 +223,7 @@ function ingresarInforme(){
       //parse datos json
       var evento = JSON.parse(data);
       //recuperamos datos del usuario y ponemos en modal
+      $("#ver_rut_paciente").val(evento.rut_paciente);
       $("#ver_fecha").val(evento.fecha_creacion);
       $("#ver_unidad").val(evento.areas_id_area);
       $("#ver_evento").val(evento.nombre_evento);
@@ -515,6 +516,7 @@ function ingresarInforme(){
       //recuperamos datos del evento
       
      //$("#eventos_areas_id_area").val(evento.areas_id_area);  
+     $("#rut_paciente_analisis").val(evento.rut_paciente); 
      $("#fecha_analisis").val(evento.fecha_creacion);  
      $("#evento_analisis").val(evento.nombre_evento);   
      $("#eventos_areas_id_area").val(evento.areas_id_area);
@@ -570,7 +572,7 @@ function ingresarInforme(){
       //parse datos json
       var evento = JSON.parse(data);
       //recuperamos datos del usuario y ponemos en modal
-     
+      $("#ver_rut_paciente_analisis").val(evento.rut_paciente);
       $("#ver_fecha_analisis").val(evento.fecha_creacion);
       $("#ver_unidad_analisis").val(evento.areas_id_area);
       $("#ver_evento_analisis").val(evento.nombre_evento);

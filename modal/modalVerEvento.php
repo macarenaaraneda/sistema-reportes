@@ -27,6 +27,17 @@
           <!-- Formulario -->
           <div>
 
+          <div class="ver_formulario">
+    <div class="form-group col-sm-12">
+      <h5>Rut paciente:</h5>
+      <input disabled type="text" class="form-control" name= "ver_rut_paciente" id="ver_rut_paciente">
+      
+    </div>  
+    </div> 
+
+
+
+
             <div class="ver_formulario"> <!--FECHA OCURRENCIA EVENTO -->
                 <div class="form-group col-sm-12">
                     
@@ -38,6 +49,7 @@
 
             <div class="ver_formulario">  <!--SELECT LUGAR DE OCURRENCIA -->
                            
+
                                 <div class="form-group col-sm-12">
                                     <h5>Unidad o lugar de ocurrencia:</h5>
                                     <select disabled name="ver_unidad" class="form-control" id="ver_unidad">

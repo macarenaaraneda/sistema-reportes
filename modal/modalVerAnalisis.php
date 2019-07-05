@@ -29,6 +29,15 @@
           <!-- Formulario -->
           <div>
 
+          <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
+                <div class="form-group col-sm-12">
+                    
+                    <h5> Rut paciente:</h5>
+                    <input disabled type="text" name="ver_rut_paciente_analisis" id= "ver_rut_paciente_analisis" class="form-control">
+                </div> 
+
+                </div>
+
           <div class="ver_formulario"> <!--FECHA OCURRENCIA EVENTO -->
                 <div class="form-group col-sm-12">
                     
