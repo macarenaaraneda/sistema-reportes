@@ -16,8 +16,8 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Prueba validar formularios</h4>
-          <button type="button" class="close" data-dismiss="modal" onclick="limpiarForm()" >&times;</button>
+          <h4 class="modal-title">Formulario de Reporte</h4>
+          <button type="button" class="close" data-dismiss="modal" onclick="location.reload()" >&times;</button>
         </div>
         
         <!-- Modal body -->
@@ -26,7 +26,6 @@
          
           <!-- Formulario -->
           <div>
-
      <div class="formulario">
     <div class="col-sm-12">
       <h2>Nombre paciente:</h2>
@@ -36,7 +35,6 @@
       </div>
     </div>  
     </div> 
-
     <div class="formulario">
     <div class="col-sm-12">
       <h2>Apellidos:</h2>
@@ -46,7 +44,6 @@
       </div>
     </div>  
     </div> 
-
     <div class="formulario">
     <div class="col-sm-12">
       <h2>Rut:</h2>
@@ -54,7 +51,6 @@
       
     </div>  
     </div> 
-
     <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
                 <div class="form-group col-sm-12">
                     
@@ -64,10 +60,7 @@
                 </div>  
              
             </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
-
-
  
-
     <div class="formulario">
     <div class="form-group col-sm-12">
     <h2> Unidad: </h2>
@@ -95,13 +88,10 @@
                                             <option value="18">Médico quirúrgico infantil</option>
                                             <option value="19">Urgencia</option>
                                             <option value="20">Equipos médicos</option>
-
-
     </select>
     <div class="valid-feedback">Selección válida</div>
   </div>
   </div>
-
               
               
     <div class="formulario">
@@ -117,22 +107,18 @@
                                         <option value="Lesion del RN por maniobra de parto"> Lesión del RN por maniobra de parto</option>
                                         <option value="Metrorragia postparto"> Metrorragia postparto</option>
                                     </optgroup>
-
                                     <optgroup label="Muerte">
                                         <option value="Muerte inesperada">Muerte inesperada</option>
                                     </optgroup>
-
                                     <optgroup label="Caídas">
                                         <option value="caída de paciente"> Caída de paciente </option>
                                         <option value="caída con causa de muerte"> Caída con causa de muerte</option>
                                         <option value="caída con fractura"> Caída con fractura</option>
                                     </optgroup>
-
                                     <optgroup label="medicación">
                                         <option value="Error de medicación"> Error de medicación </option>
                                         <option value="Error de medicación con causa de muerte">Error de medicación con causa de muerte</option>
                                     </optgroup>
-
                                     <optgroup label="Medicina Transfusional">
                                         <option value="Transfusión paciente equivocado"> Transfusión paciente equivocado</option>
                                         <option value="Transfusión de componentes sanguineos sin tamizajes">Transfusión de componentes sanguineos sin tamizajes</option>
@@ -140,7 +126,6 @@
                                         <option value="Reacción hemolítica aguda por incompatibilidad de grupo sanguineo">Reacción hemolítica aguda por incompatibilidad de grupo sanguineo</option>
                                         <option value="Reacción por carga de volumen">Reacción por carga de volumen</option>
                                     </optgroup>
-
                                     <optgroup label="Cirugia">
                                         <option value="Cirugía a paciente equivocado">Cirugía a paciente equivocado</option>
                                         <option value="Cirugía en sitio equivocado"> Cirugía en sitio equivocado</option>
@@ -152,7 +137,6 @@
                                         <option value="Reoperaciones no programadas"> Reoperaciones no programadas</option>
                                         <option value="Cuerpo extraño">Cuerpo extraño</option>
                                     </optgroup>
-
                                     <optgroup label="Comportamiento del paciente">
                                         <option value="Agresiones entre usuarios"> Agresiones entre usuarios</option>
                                         <option value="Autoagresiones"> Autoagresiones</option>
@@ -160,22 +144,18 @@
                                         <option value="Autoagresiones con causa de muerte o daño severo">Autoagresiones con causa de muerte o daño severo</option>
                                         <option value="Fuga de paciente"> Fuga de paciente </option>
                                     </optgroup>
-
                                     <optgroup label="IAAS">
                                         <option value="Infecciones asociadas a la atención de salud"> Infecciones asociadas a la atención de salud</option>
                                         <option value="Brote epidémico">Brote epidémico</option>
                                         <option value="Distribución de material no ésteril">Distribución de material no ésteril</option>
                                     </optgroup>
-
                                     <optgroup label="Nutrición">
                                         <option value="Error en entrega de régimen"> Error en entrega de régimen</option>
                                         <option value="Énfermedad de transmisión alimentaria"> Enfermedad de transmisión alimentaria</option>
                                     </optgroup>
-
                                     <optgroup label="Laboratorio">
                                         <option value="biopsias">Extravío de biopsias</option>
                                     </optgroup>
-
                                     <optgroup label="Atención al paciente">
                                         <option value="Ulceras por presión grado 4">Ulceras por presión grado 4</option>
                                         <option value="Ulcera por presión"> Ulcera por presión </option>
@@ -190,7 +170,6 @@
   </div>
   </div>
                 
-
  <div class="formulario"> <!--CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
                                 
                             <div class="form-group col-sm-12">
@@ -204,7 +183,6 @@
                                 </div>
                                 </div>
                             </div> <!-- FIN CHECKBOX ¿EXISTE DAÑO AL PACIENTE? -->
-
                             
                             <div class="formulario"> <!--SELECT GRAVEDAD DEL DAÑO -->
                            
@@ -221,7 +199,6 @@
                                <div class="valid-feedback">Selección válida</div>
                            </div>
                        </div> <!-- FIN SELECT GRAVEDAD DEL DAÑO -->
-
                        <div class="formulario"> <!--CHECKBOX DE SE INFORMA A -->
                <div class="form-group col-sm-12">
                <div class="checkbox">
@@ -243,33 +220,23 @@
                                 </div>
                                 
                                 </div>
-
-
                             </div> <!-- FIN CHECKBOX DE SE INFORMA A -->
-
-
                             <div class="formulario"> 
                         <div class="form-group col-sm-12">
                            <h2>Breve descripción del evento (Máx 250 caracteres):</h2>
                            <textarea cols="50" rows="5" name="comentario" maxlength="250"></textarea>
                                                
-
                         </div> 
            
                     </div> 
-
-
                  
                  </div>  
                     
-
             <div class="modal-footer">
             <button type="submit" class="btn btn-primary"  >Aceptar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="location.reload()" >Cancelar</button>
             <input type="hidden" id="id_evento_oculto_id_evento">
             </div> 
-
-
           </form>
            
            
@@ -278,14 +245,10 @@
         
         
     </div>
-
   </div>
-
 </div>
-
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-
 (function() {
   'use strict';
   window.addEventListener('load', function() {
@@ -307,8 +270,4 @@
     });
   }, false);
 })();  
-
-
-
  </script>
-

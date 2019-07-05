@@ -144,6 +144,23 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
     <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
      
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tipo Eventos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item"   href="../saludmental/inicio_incidente.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Incidentes</a>
+             <!--Agregar otra opción de ser necesario-->
+             <a class="dropdown-item"   href="../saludmental/inicio_adverso.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Adverso</a>
+             <a class="dropdown-item"   href="../saludmental/inicio_centinela.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Centinela</a>
+        </div>
+       
+        
+      </li>
+
+
+
+
       
     </ul>
   </div>

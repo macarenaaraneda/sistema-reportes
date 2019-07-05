@@ -532,7 +532,7 @@ function ingresarInforme(){
     var id_evento = $("#id_evento_oculto_id_evento").val();
     var id_areas_id_area = $("#eventos_areas_id_area").val();
   
-    var fechaanalisis = $("#fechaanalisis").val();
+   
     var causas = $("#causas").val();
     var propuestas = $("#propuestas").val();
     
@@ -541,7 +541,7 @@ function ingresarInforme(){
       id_areas_id_area: id_areas_id_area,
       causas:causas,
       propuestas:propuestas,
-      fechaanalisis:fechaanalisis,
+    
       
     }, function(data, status){
       $("#myModalFormularioAnalisis").modal("hide");

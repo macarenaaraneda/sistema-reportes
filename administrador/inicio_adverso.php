@@ -5,10 +5,8 @@ session_start();
 include '../config.php'; // acceso
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalCrearUsuario.php'; 
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEventos.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEstado.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerAnalisis.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalAnalisisCentinela.php';
 
 
 
@@ -125,7 +123,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 	<body>
 	
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Inicio nav -->
-  <a class="navbar-brand" href="#">Eventos reportados</a>
+  <a class="navbar-brand" href="#">Eventos Adversos</a>
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -136,12 +134,20 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
     <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
 
+    <li class="nav-item active">
+    <a class="nav-link" href="../administrador/inicio.php"> Inicio <span class="sr-only">(current)</span></a>
+  </li>
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Tipo Eventos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
          
+        <a class="dropdown-item"   href="../administrador/inicio_incidente.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Incidentes</a>
+             <!--Agregar otra opción de ser necesario-->
+          
+             <a class="dropdown-item"   href="../administrador/inicio_centinela.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Centinela</a>
          
            <!--Agregar otra opción de ser necesario-->
         </div>
@@ -157,22 +163,9 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 
-      <li class="nav-item active">
-        <a class="nav-link" href="../administrador/estadisticas.php">Estadisticas <span class="sr-only">(current)</span></a>
-      </li>
 
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Usuarios
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" data-toggle="modal" data-target="#myModalCrearUsuario" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Nuevo usuario</a>
-          <a class="dropdown-item"   href="../administrador/usuarios.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Lista Usuarios</a>
-           <!--Agregar otra opción de ser necesario-->
-        </div>
-        
-      </li>
+      
 
 
     </ul>

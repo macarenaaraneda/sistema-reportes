@@ -3,12 +3,8 @@ session_start();
 
 
 include '../config.php'; // acceso
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalCrearUsuario.php'; 
+
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEventos.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEstado.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerAnalisis.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalAnalisisCentinela.php';
 
 
 
@@ -153,29 +149,10 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   </li>
 
 
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Usuarios
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <a class="dropdown-item" data-toggle="modal" data-target="#myModalCrearUsuario" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Nuevo usuario</a>
-      <a class="dropdown-item"   href="../administrador/usuarios.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Lista Usuarios</a>
-       <!--Agregar otra opción de ser necesario-->
-    </div>
-    
-  </li>
+ 
 
 
-  <li class="nav-item active">
-    <a class="nav-link" href="../administrador/analisis.php">Analisis <span class="sr-only">(current)</span></a>
-  </li>
-
-
-
-
-  <li class="nav-item active">
-    <a class="nav-link" href="../administrador/estadisticas.php">Estadisticas <span class="sr-only">(current)</span></a>
-  </li>
+ 
 
 
 

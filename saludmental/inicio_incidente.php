@@ -1,16 +1,19 @@
+
+
+
 <?php
 session_start();
 
 
 include '../config.php'; // acceso
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalDetallesEventosAnalisis.php';
-
-
-
+ 
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalFormularioAnalisis.php';
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerAnalisis.php';
 
 
 if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
- 
+
 
    exit;
 }
@@ -27,17 +30,17 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
     margin-bottom: 8px;
   }
   footer{
-    background-color: #33363b;
+    background-color: #f8f9fa;;
     margin-top: 50px;
     height: 
   }
 
   #copyright{
-    color: white;
+    color: dark;
   }
 
   #tablaEventos{
-   background: #FFFF;
+   background: #FFF;
 
   
   }
@@ -52,8 +55,9 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
-
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/additional-methods.min.js"></script>
 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -130,8 +134,8 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Análisis de eventos</a>
+<nav class="navbar navbar-expand-lg navbar-primary bg-light">
+  <a class="navbar-brand" href="#">Incidentes</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -139,43 +143,42 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
   <!-- https://getbootstrap.com/docs/4.0/components/navbar/-->
   <!-- para agrupar y ocultar los contenidos de la barra de navegación por un punto de interrupción principal.-->
     <ul class="navbar-nav"> <!-- ENCABEZADO DE NAVEGACIÓN -->
-      <li class="nav-item active">
-        <a class="nav-link" href="../administrador/inicio.php">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        
-        <li class="nav-item dropdown">
+     
+    <li class="nav-item active">
+    <a class="nav-link" href="../saludmental/inicio.php"> Inicio <span class="sr-only">(current)</span></a>
+  </li>
+
+    <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Tipo Eventos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item"   href="../administrador/inicio_incidente.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Incidentes</a>
-             <!--Agregar otra opción de ser necesario-->
-             <a class="dropdown-item"   href="../administrador/inicio_adverso.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Adverso</a>
-             <a class="dropdown-item"   href="../administrador/inicio_centinela.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Centinela</a>
+       
+             <a class="dropdown-item"   href="../saludmental/inicio_adverso.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Adverso</a>
+             <a class="dropdown-item"   href="../saludmental/inicio_centinela.php" data-backdrop="static" data-keyboard="false" style="cursor: pointer;">Centinela</a>
         </div>
        
         
       </li>
 
-     
-    
-     
+
+
+
+      
     </ul>
   </div>
   <div>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="../logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
-      
-      
-    </li>
+      </li>
     </ul>
   </div>
 </nav>
 
 
 
-	<div class="display" id="display"> <!--Se introduce la tabla -->
+	<div class="display">
 
 
 	
@@ -185,7 +188,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 <!-- Footer PIE DE PÁGINA-->
 <!-- Bootstrap footer https://mdbootstrap.com/docs/jquery/navigation/footer/-->
-<footer class="page-footer font-small special-color-dark pt-4">
+<footer class="page-footer font-small special-color- pt-4">
 
     <!-- Footer Elements -->
     <div class="container">
@@ -226,7 +229,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
     <!-- Copyright -->
     <div id="copyright" class="footer-copyright text-center py-3">
       <!-- LOGO <img src="../resources/logo.png" class="rounded"> Para poner logo --> 
-      <span>© Copyright 2019 | Hospital Penco Lirquén.</span>  
+      <span>© Copyright 2019 | Hospital Penco Lirquen.</span>  
       
     </div>
     <!-- Copyright -->
@@ -241,6 +244,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 <!-- FUNCIÓN DE ACTUALIZAR TABLA DE EVENTOS-->
 <script type="text/javascript">
 $(document).ready( function () {
-	actualizarTablaAnalisis();
+	actualizarTablaEventos_incidente();
 });
 </script>
+

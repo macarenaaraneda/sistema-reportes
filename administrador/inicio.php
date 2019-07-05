@@ -7,8 +7,7 @@ include 'C:\xampp\htdocs\sistemaReportes\modal\modalCrearUsuario.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerEvento.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEventos.php';
 include 'C:\xampp\htdocs\sistemaReportes\modal\modalActualizarEstado.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalVerAnalisis.php';
-include 'C:\xampp\htdocs\sistemaReportes\modal\modalAnalisisCentinela.php';
+
 
 
 

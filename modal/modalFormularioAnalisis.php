@@ -134,14 +134,7 @@
            
 
 
-                            <div class="formulario"> <!--FECHA OCURRENCIA EVENTO -->
-                <div class="form-group col-sm-12">
-                    
-                    <h5> Fecha de analisis:</h5>
-                    <input type="date" name="fechaanalisis" id= "fechaanalisis" class="form-control">
-                </div>  
-             
-            </div> <!-- FIN FECHA OCURRENCIA EVENTO -->
+                          
 
                         <div class="formulario"> 
                         <div class="form-group col-sm-12">
