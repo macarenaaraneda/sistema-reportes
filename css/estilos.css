@@ -115,7 +115,7 @@ body {
 
 
 .main-head{
-  height: 40px;
+  height: 150px;
   background: #FFF;
  
 }
@@ -124,19 +124,19 @@ body {
   height: 100%;
   background-color: #000;
   overflow-x: hidden;
-  padding-top: 1px;
+  padding-top: 20px;
 }
 
 
 .main {
-  padding: 200px 215px; /*posición en el espacio de usuario*/
+  padding: 0px 10px; /*posición en el espacio de usuario*/
 }
 
-@media screen and (max-height: 420px) {
+@media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 450px) {
   .login-form{
       margin-top: 10%;
   }
@@ -152,7 +152,7 @@ body {
   }
 
   .sidenav{
-      width: 56%;
+      width: 40%;
       position: fixed;
       z-index: 1;
       top: 0;
@@ -164,19 +164,19 @@ body {
   }
 
   .register-form{
-      margin-top: 80%;
+      margin-top: 20%;
   }
 }
 
 
 .login-main-text{
-  margin-top: 10%;
-  padding: 100px;
+  margin-top: 20%;
+  padding: 60px;
   color: #fff;
 }
 
 .login-main-text h2{
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .btn-black{

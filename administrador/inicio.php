@@ -159,7 +159,7 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
 
 
       <li class="nav-item active">
-        <a class="nav-link" href="../administrador/estadisticas.php">Estadisticas <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../administrador/estadisticas.php">Datos <span class="sr-only">(current)</span></a>
       </li>
 
 

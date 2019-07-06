@@ -158,7 +158,9 @@ if(!isset($_SESSION['rut']) || empty($_SESSION['rut'])){
         
       </li>
 
-
+      <li class="nav-item active">
+        <a class="nav-link" href="../saludmental/analisis.php">Analisis <span class="sr-only">(current)</span></a>
+      </li>
 
 
       

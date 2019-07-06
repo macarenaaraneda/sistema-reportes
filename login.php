@@ -2,8 +2,9 @@
 // Include config file
 require_once 'config.php';
 
-//include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';  
+include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';  
 
+error_reporting(E_ALL ^ E_NOTICE);
 // Define variables and initialize with empty values
 $rut = $password = $tipo_usuario = $id_area_usuarios = $nombre = $apellido = $id_usuario = "";
 $rut_err = $password_err = "";
@@ -144,6 +145,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                        }
                    }
                } else{
+
+                
                    // Display an error message if username doesn't exist
                    $rut_err = ' Cuenta no corresponde al rut ingresado.';
                    echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
@@ -170,8 +173,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    
    // Close connection
    mysqli_close($link);
+
+
+  
 }
 ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -179,9 +186,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login V6</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php
-
-    include 'C:\xampp\htdocs\sistemaReportes\modal\modalReporteFormularioEvento.php';?>
+    
     
 
 
@@ -213,6 +218,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+ 
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 

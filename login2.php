@@ -3,7 +3,7 @@
 require_once 'config.php';
 
 
-
+error_reporting(E_ALL ^ E_NOTICE);
 // Define variables and initialize with empty values
 $rut = $password = $tipo_usuario = $id_area_usuarios = $nombre = $apellido = $id_usuario = "";
 $rut_err = $password_err = "";
